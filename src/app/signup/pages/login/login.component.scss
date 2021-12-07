@@ -9,6 +9,10 @@
   padding: 32px;
   text-align: center;
 
+  &_header {
+    margin-bottom: 48px;
+  }
+
   h1 {
     color: var(--text);
     font-size: 24px;
@@ -24,5 +28,29 @@
     font-size: 14px;
     line-height: 20px;
     letter-spacing: 0.3px;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto 8px;
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  &_footer {
+    margin-top: 32px;
+
+    a {
+      color: var(--gray-dark);
+      font-size: 14px;
+      letter-spacing: 0.3px;
+      line-height: 20px;
+      text-align: center;
+    }
+
+    strong {
+      color: var(--primary);
+    }
   }
 }

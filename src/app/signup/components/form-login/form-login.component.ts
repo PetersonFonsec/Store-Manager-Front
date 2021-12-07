@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form-login.component.scss'],
 })
 export class FormLoginComponent implements OnInit {
+  user: any = {};
   constructor() {}
 
   ngOnInit(): void {}
