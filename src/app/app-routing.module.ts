@@ -5,12 +5,17 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'login',
+    redirectTo: 'dashboard',
   },
   {
     path: 'login',
     loadChildren: () =>
       import('./signup/signup.module').then((m) => m.SignupModule),
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () =>
+      import('./signin/signin.module').then((m) => m.SigninModule),
   },
 ];
 
