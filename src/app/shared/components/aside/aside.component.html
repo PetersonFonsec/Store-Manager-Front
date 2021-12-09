@@ -1,1 +1,13 @@
-<p>aside works!</p>
+<aside class="aside">
+  <header class="aside_header">
+    <img src="/assets/logo-large.png" alt="logo" />
+  </header>
+
+  <nav class="aside_list">
+    <ul>
+      <li *ngFor="let item of [0, 1, 2, 3]">
+        <a href=""> DASHBOARD </a>
+      </li>
+    </ul>
+  </nav>
+</aside>
