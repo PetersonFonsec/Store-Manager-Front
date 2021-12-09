@@ -1,0 +1,24 @@
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+
+  &_avatar {
+    align-items: center;
+    color: var(--text);
+    border: 1.5px #dfe0eb;
+    border-radius: 100%;
+    display: flex;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    text-align: right;
+
+    img {
+      border-radius: 100%;
+      display: block;
+      margin-left: 14px;
+    }
+  }
+}

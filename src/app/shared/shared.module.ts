@@ -7,6 +7,7 @@ import { AsideComponent } from './components/aside/aside.component';
 import { ButtonComponent } from './components/button/button.component';
 import { InputTextComponent } from './components/inputs/input-text/input-text.component';
 import { InputPasswordComponent } from './components/inputs/input-password/input-password.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -14,10 +15,12 @@ import { InputPasswordComponent } from './components/inputs/input-password/input
     ButtonComponent,
     InputTextComponent,
     InputPasswordComponent,
+    HeaderComponent,
   ],
   imports: [CommonModule, FontAwesomeModule],
   exports: [
     AsideComponent,
+    HeaderComponent,
     ButtonComponent,
     InputTextComponent,
     InputPasswordComponent,
