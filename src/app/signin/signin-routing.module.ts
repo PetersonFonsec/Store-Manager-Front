@@ -6,10 +6,22 @@ const routes: Routes = [
   {
     path: '',
     component: SigninComponent,
-    loadChildren: () =>
-      import('./pages/dashboard/dashboard.module').then(
-        (m) => m.DashboardModule
-      ),
+    children: [
+      {
+        path: 'dashboard',
+        loadChildren: () =>
+          import('./pages/dashboard/dashboard.module').then(
+            (m) => m.DashboardModule
+          ),
+      },
+      {
+        path: 'produtos',
+        loadChildren: () =>
+          import('./pages/products/products.module').then(
+            (m) => m.ProductsModule
+          ),
+      },
+    ],
   },
 ];
 

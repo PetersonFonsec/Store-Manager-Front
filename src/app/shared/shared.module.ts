@@ -8,6 +8,7 @@ import { ButtonComponent } from './components/button/button.component';
 import { InputTextComponent } from './components/inputs/input-text/input-text.component';
 import { InputPasswordComponent } from './components/inputs/input-password/input-password.component';
 import { HeaderComponent } from './components/header/header.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { HeaderComponent } from './components/header/header.component';
     InputPasswordComponent,
     HeaderComponent,
   ],
-  imports: [CommonModule, FontAwesomeModule],
+  imports: [CommonModule, FontAwesomeModule, RouterModule],
   exports: [
     AsideComponent,
     HeaderComponent,

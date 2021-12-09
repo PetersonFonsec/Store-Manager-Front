@@ -5,7 +5,7 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'dashboard',
+    redirectTo: 'area-logada',
   },
   {
     path: 'login',
@@ -13,7 +13,7 @@ const routes: Routes = [
       import('./signup/signup.module').then((m) => m.SignupModule),
   },
   {
-    path: 'dashboard',
+    path: 'area-logada',
     loadChildren: () =>
       import('./signin/signin.module').then((m) => m.SigninModule),
   },
