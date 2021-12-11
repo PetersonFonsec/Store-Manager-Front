@@ -1,0 +1,35 @@
+<div class="table">
+  <div class="table_header">
+    <h2 class="table_header_title">All tickets</h2>
+
+    <div class="table_header_filter">
+      <div class="filter">
+        <fa-icon class="icon" [icon]="sortIcon"></fa-icon>
+        Sort
+      </div>
+
+      <div class="filter">
+        <fa-icon class="icon" [icon]="filterIcon"></fa-icon>
+        Filter
+      </div>
+    </div>
+  </div>
+
+  <div class="table_body">
+    <ng-content></ng-content>
+  </div>
+
+  <div class="table_footer">
+    <div class="table_footer_per-page">Rows per page: 8</div>
+
+    <div class="table_footer_pages">
+      1-8 of 1240
+      <button class="table_footer_button">
+        <fa-icon [icon]="prevIcon"></fa-icon>
+      </button>
+      <button class="table_footer_button">
+        <fa-icon [icon]="nextIcon"></fa-icon>
+      </button>
+    </div>
+  </div>
+</div>

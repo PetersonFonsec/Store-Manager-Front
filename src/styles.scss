@@ -4,6 +4,7 @@
   --font-family: Mulish;
   --primary: #3751ff;
   --light: #fcfdfe;
+  --white: #fff;
   --gray: #f0f1f7;
   --gray-dark: #9fa2b4;
   --background: #363740;
@@ -46,4 +47,10 @@ ol {
   padding: 0;
   list-style: none;
   margin: 0;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
 }
