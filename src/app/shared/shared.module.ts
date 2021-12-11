@@ -9,6 +9,11 @@ import { InputTextComponent } from './components/inputs/input-text/input-text.co
 import { InputPasswordComponent } from './components/inputs/input-password/input-password.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RouterModule } from '@angular/router';
+import { TablesProductsComponent } from './components/tables/tables-products/tables-products.component';
+import { TablesProductsItemComponent } from './components/itens/tables-products-item/tables-products-item.component';
+import { AvatarComponent } from './components/avatar/avatar.component';
+import { BadgeComponent } from './components/badge/badge.component';
+import { TablesProductsHeaderComponent } from './components/itens/tables-products-header/tables-products-header.component';
 
 @NgModule({
   declarations: [
@@ -17,14 +22,24 @@ import { RouterModule } from '@angular/router';
     InputTextComponent,
     InputPasswordComponent,
     HeaderComponent,
+    TablesProductsComponent,
+    TablesProductsItemComponent,
+    AvatarComponent,
+    BadgeComponent,
+    TablesProductsHeaderComponent,
   ],
   imports: [CommonModule, FontAwesomeModule, RouterModule],
   exports: [
     AsideComponent,
-    HeaderComponent,
     ButtonComponent,
     InputTextComponent,
     InputPasswordComponent,
+    HeaderComponent,
+    TablesProductsComponent,
+    TablesProductsItemComponent,
+    AvatarComponent,
+    BadgeComponent,
+    TablesProductsHeaderComponent,
   ],
 })
 export class SharedModule {}

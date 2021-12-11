@@ -30,8 +30,8 @@
     }
 
     a.active {
-      background-color: var(--gray-dark);
-      border-right: 3px solid var(--background-very-light);
+      background-color: rgba(159, 162, 180, 0.2);
+      border-left: 3px solid var(--background-very-light);
       // opacity: 0.08;
     }
   }
