@@ -5,7 +5,7 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'area-logada',
+    redirectTo: 'dashboard',
   },
   {
     path: 'login',
