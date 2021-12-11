@@ -14,6 +14,7 @@ import { TablesProductsItemComponent } from './components/itens/tables-products-
 import { AvatarComponent } from './components/avatar/avatar.component';
 import { BadgeComponent } from './components/badge/badge.component';
 import { TablesProductsHeaderComponent } from './components/itens/tables-products-header/tables-products-header.component';
+import { ContainerComponent } from './components/container/container.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { TablesProductsHeaderComponent } from './components/itens/tables-product
     AvatarComponent,
     BadgeComponent,
     TablesProductsHeaderComponent,
+    ContainerComponent,
   ],
   imports: [CommonModule, FontAwesomeModule, RouterModule],
   exports: [
@@ -40,6 +42,7 @@ import { TablesProductsHeaderComponent } from './components/itens/tables-product
     AvatarComponent,
     BadgeComponent,
     TablesProductsHeaderComponent,
+    ContainerComponent,
   ],
 })
 export class SharedModule {}

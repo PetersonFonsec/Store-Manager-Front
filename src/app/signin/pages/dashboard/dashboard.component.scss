@@ -1,0 +1,29 @@
+.dashboard {
+  display: grid;
+  flex: 1;
+  grid-gap: 24px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(12, 160px);
+
+  .collumn-medium {
+    grid-column: span 2;
+  }
+
+  .card {
+    color: var(--gray-dark);
+    font-size: 19px;
+    font-weight: bold;
+    letter-spacing: 0.4px;
+    line-height: 24px;
+    text-align: center;
+
+    strong {
+      color: var(--text);
+      display: block;
+      font-size: 40px;
+      letter-spacing: 1px;
+      line-height: 50px;
+      margin-top: 12px;
+    }
+  }
+}
