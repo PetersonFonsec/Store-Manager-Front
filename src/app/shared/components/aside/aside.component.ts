@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PageLink, pages } from 'src/app/data/pages';
 
 @Component({
   selector: 'app-aside',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./aside.component.scss'],
 })
 export class AsideComponent implements OnInit {
-  constructor() {}
+  links: PageLink[] = pages;
 
   ngOnInit(): void {}
 }
