@@ -17,6 +17,14 @@
     line-height: 24px;
     text-align: center;
 
+    &_title {
+      color: #252733;
+      font-size: 19px;
+      font-weight: bold;
+      line-height: 24px;
+      letter-spacing: 0.4px;
+    }
+
     strong {
       color: var(--text);
       display: block;
@@ -24,6 +32,19 @@
       letter-spacing: 1px;
       line-height: 50px;
       margin-top: 12px;
+    }
+
+    &.no-padding ::ng-deep .container {
+      padding: 0;
+    }
+
+    ul {
+      width: 100%;
+      padding: 24px 0;
+    }
+
+    li {
+      padding: 24px 32px;
     }
   }
 }

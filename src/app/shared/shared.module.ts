@@ -15,6 +15,8 @@ import { AvatarComponent } from './components/avatar/avatar.component';
 import { BadgeComponent } from './components/badge/badge.component';
 import { TablesProductsHeaderComponent } from './components/itens/tables-products-header/tables-products-header.component';
 import { ContainerComponent } from './components/container/container.component';
+import { ListComponent } from './components/list/list.component';
+import { ListItemComponent } from './components/itens/list-item/list-item.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { ContainerComponent } from './components/container/container.component';
     BadgeComponent,
     TablesProductsHeaderComponent,
     ContainerComponent,
+    ListComponent,
+    ListItemComponent,
   ],
   imports: [CommonModule, FontAwesomeModule, RouterModule],
   exports: [
@@ -43,6 +47,8 @@ import { ContainerComponent } from './components/container/container.component';
     BadgeComponent,
     TablesProductsHeaderComponent,
     ContainerComponent,
+    ListComponent,
+    ListItemComponent,
   ],
 })
 export class SharedModule {}
