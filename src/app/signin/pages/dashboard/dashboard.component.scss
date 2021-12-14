@@ -3,7 +3,6 @@
   flex: 1;
   grid-gap: 24px;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(12, 160px);
 
   .collumn-medium {
     grid-column: span 2;

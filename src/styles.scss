@@ -71,3 +71,12 @@ h5,
 h6 {
   margin: 0;
 }
+
+.content {
+  background: var(--white);
+  border: 1px solid #dfe0eb;
+  border-radius: 8px;
+  box-sizing: border-box;
+  padding: 24px 32px;
+  width: 100%;
+}

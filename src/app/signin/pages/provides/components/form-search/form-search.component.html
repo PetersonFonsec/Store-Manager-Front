@@ -1,0 +1,14 @@
+<form class="form content" #form="ngForm">
+  <app-input-text
+    class="input"
+    name="name"
+    [(ngModel)]="search.name"
+    #name="ngModel"
+    type="name"
+    label="name"
+    placeholder="Name to products"
+    id="name"
+  ></app-input-text>
+
+  <app-button type="submit">Buscar</app-button>
+</form>
