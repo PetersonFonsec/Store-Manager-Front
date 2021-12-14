@@ -26,4 +26,9 @@ export const pages: PageLink[] = [
     content: 'Fornecedores',
     icon: faPeopleCarry,
   },
+  {
+    link: 'vendas',
+    content: 'vendas',
+    icon: faPeopleCarry,
+  },
 ];
