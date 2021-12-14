@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { scrollToTop } from 'src/app/shared/utils/scroll-to-top';
 
 @Component({
   selector: 'app-products',
@@ -8,5 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class ProductsComponent implements OnInit {
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    scrollToTop();
+  }
 }
