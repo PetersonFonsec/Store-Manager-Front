@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="container_header">
+    <h3 class="container_title">{{ title }}</h3>
+
+    <div class="container_header_aside">
+      <ng-content select="[header-aside]"></ng-content>
+    </div>
+  </div>
+
+  <ul class="container_list">
+    <ng-content></ng-content>
+  </ul>
+</div>
