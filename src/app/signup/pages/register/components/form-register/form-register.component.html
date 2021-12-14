@@ -1,0 +1,36 @@
+<form #form="ngForm">
+  <app-input-text
+    class="input"
+    name="email"
+    [(ngModel)]="user.email"
+    #email="ngModel"
+    type="email"
+    label="Email"
+    placeholder="Email address"
+    id="email"
+  ></app-input-text>
+
+  <app-input-password
+    name="password"
+    class="input half"
+    [(ngModel)]="user.password"
+    #password="ngModel"
+    type="password"
+    label="Password"
+    placeholder="Password"
+    id="password"
+  ></app-input-password>
+
+  <app-input-password
+    name="confirmPassword"
+    class="input half"
+    [(ngModel)]="user.confirmPassword"
+    #confirmPassword="ngModel"
+    type="password"
+    label="Confirm Password"
+    placeholder="Confirm Password"
+    id="confirmPassword"
+  ></app-input-password>
+
+  <app-button type="submit">Register</app-button>
+</form>
