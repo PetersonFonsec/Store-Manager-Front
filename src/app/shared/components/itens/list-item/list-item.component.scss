@@ -1,0 +1,14 @@
+.item {
+  border-bottom: 1px solid #dfe0eb;
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px 32px;
+
+  &_content {
+    flex: 1;
+  }
+
+  &_aside {
+    text-align: right;
+  }
+}
