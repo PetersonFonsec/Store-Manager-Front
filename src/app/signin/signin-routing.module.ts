@@ -8,6 +8,10 @@ const routes: Routes = [
     component: SigninComponent,
     children: [
       {
+        path: '',
+        redirectTo: 'dashboard',
+      },
+      {
         path: 'dashboard',
         loadChildren: () =>
           import('./pages/dashboard/dashboard.module').then(
