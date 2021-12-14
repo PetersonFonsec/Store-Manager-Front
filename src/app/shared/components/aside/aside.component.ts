@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faDoorOpen } from '@fortawesome/free-solid-svg-icons';
 import { PageLink, pages } from 'src/app/data/pages';
 
 @Component({
@@ -8,6 +9,7 @@ import { PageLink, pages } from 'src/app/data/pages';
 })
 export class AsideComponent implements OnInit {
   links: PageLink[] = pages;
+  exitIcon = faDoorOpen;
 
   ngOnInit(): void {}
 }
