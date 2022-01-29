@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormLoginComponent implements OnInit {
   user: any = {};
+  loading = false;
   constructor() {}
 
   ngOnInit(): void {}
+  submit(): void {}
 }

@@ -1,25 +1,36 @@
-<form #form="ngForm">
-  <app-input-text
-    class="input"
-    name="email"
-    [(ngModel)]="user.email"
-    #email="ngModel"
-    type="email"
-    label="Email"
-    placeholder="Email address"
-    id="email"
-  ></app-input-text>
+<form autocomplete="off" novalidate="false" (submit)="submit()" #form="ngForm">
+  <div class="input">
+    <app-input-text
+      name="email"
+      [(ngModel)]="user.email"
+      [error]="!!email.invalid && !!email.touched"
+      #email="ngModel"
+      type="email"
+      label="Email"
+      placeholder="Email address"
+      id="email"
+      email
+      required
+    ></app-input-text>
+    <app-error-message [model]="email"> </app-error-message>
+  </div>
 
-  <app-input-password
-    name="password"
-    class="input"
-    [(ngModel)]="user.password"
-    #password="ngModel"
-    type="password"
-    label="Password"
-    placeholder="Password"
-    id="password"
-  ></app-input-password>
+  <div class="input">
+    <app-input-password
+      name="password"
+      [(ngModel)]="user.password"
+      #password="ngModel"
+      type="password"
+      label="Password"
+      placeholder="Password"
+      [error]="!!password.invalid && !!password.touched"
+      id="password"
+      required
+    ></app-input-password>
+    <app-error-message [model]="password"> </app-error-message>
+  </div>
 
-  <app-button type="submit">Login</app-button>
+  <app-button [loading]="loading" [disabled]="!!form.invalid" type="submit">
+    Login
+  </app-button>
 </form>
