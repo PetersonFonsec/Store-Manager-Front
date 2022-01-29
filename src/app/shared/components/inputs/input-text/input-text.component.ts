@@ -16,6 +16,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 export class InputTextComponent implements OnInit, ControlValueAccessor {
   @Input() placeholder = '';
   @Input() type = 'text';
+  @Input() error = false;
   @Input() label = '';
   @Input() id = '';
   val = '';
@@ -26,19 +27,19 @@ export class InputTextComponent implements OnInit, ControlValueAccessor {
 
   onTouched: any = () => {};
 
+  constructor() {}
+
   get value() {
     return this.val;
   }
 
   set value(val) {
-    if (!val) return;
-
-    this.val = val;
-    this.onChange(val);
-    this.onTouched(val);
+    if (val !== undefined && val !== null) {
+      this.val = val;
+      this.onChange(val);
+      this.onTouched(val);
+    }
   }
-
-  onBlur() {}
 
   writeValue(value: any) {
     this.value = value;

@@ -16,13 +16,16 @@ import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 })
 export class InputPasswordComponent implements OnInit, ControlValueAccessor {
   @Input() placeholder = '';
+  @Input() error = false;
   @Input() label = '';
   @Input() id = '';
   type = 'text';
   icon = faEye;
   val = '';
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.changeType();
+  }
 
   changeType(): void {
     if (this.type === 'text') {
@@ -43,11 +46,11 @@ export class InputPasswordComponent implements OnInit, ControlValueAccessor {
   }
 
   set value(val) {
-    if (!val) return;
-
-    this.val = val;
-    this.onChange(val);
-    this.onTouched(val);
+    if (val !== undefined && val !== null) {
+      this.val = val;
+      this.onChange(val);
+      this.onTouched(val);
+    }
   }
 
   onBlur() {}

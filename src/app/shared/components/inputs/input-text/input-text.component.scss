@@ -36,4 +36,15 @@
     margin-bottom: var(--space-xs);
     text-transform: uppercase;
   }
+
+  &.has-error {
+    input::placeholder,
+    label {
+      color: var(--red-medium);
+    }
+
+    input {
+      border-color: var(--red-medium);
+    }
+  }
 }
