@@ -6,9 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form-register.component.scss'],
 })
 export class FormRegisterComponent implements OnInit {
+  loading = false;
   user: any = {};
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  submit(): void {}
 }
