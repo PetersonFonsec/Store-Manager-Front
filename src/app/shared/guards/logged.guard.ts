@@ -10,7 +10,7 @@ export class LoggedGuard implements CanActivate {
 
   async canActivate(route: ActivatedRouteSnapshot): Promise<boolean> {
     const token = this.authService.token;
-    if (!token) await this.router.navigateByUrl('/');
+    if (!token) await this.router.navigateByUrl('/signup');
     return true;
   }
 }
