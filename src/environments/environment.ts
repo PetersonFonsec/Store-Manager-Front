@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  token: '@STORE_MANAGER',
   urlApi: 'http://localhost:3000/',
 };
 
