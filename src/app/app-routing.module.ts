@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoggedGuard } from './shared/guards/logged.guard';
 
 const routes: Routes = [
   {
@@ -14,6 +15,7 @@ const routes: Routes = [
   },
   {
     path: 'signin',
+    canActivate: [LoggedGuard],
     loadChildren: () =>
       import('./signin/signin.module').then((m) => m.SigninModule),
   },
