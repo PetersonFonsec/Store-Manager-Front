@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, Router } from '@angular/router';
+import { CanActivate, Router } from '@angular/router';
 import { AuthService } from '../services/auth/auth.service';
 
 @Injectable({
@@ -8,7 +8,7 @@ import { AuthService } from '../services/auth/auth.service';
 export class LoggedGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) {}
 
-  async canActivate(route: ActivatedRouteSnapshot): Promise<boolean> {
+  async canActivate(): Promise<boolean> {
     const token = this.authService.token;
     if (!token) await this.router.navigateByUrl('/signup');
     return true;
