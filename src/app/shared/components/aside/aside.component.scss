@@ -17,7 +17,7 @@
   &_list {
     .link,
     a {
-      color: #dde2ff;
+      color: var(--background-very-light);
       display: flex;
       font-size: 16px;
       letter-spacing: 0.2px;

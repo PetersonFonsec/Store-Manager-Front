@@ -38,7 +38,7 @@ export class AuthService {
       .pipe(map((response) => this.setToken<IAuthResponse>(response)));
   }
 
-  async logout(): Promise<any> {
+  async logout(): Promise<void> {
     localStorage.removeItem(environment.token);
     await this.router.navigateByUrl('/signup');
   }
