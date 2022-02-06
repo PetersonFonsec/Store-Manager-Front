@@ -65,6 +65,7 @@ import { AlertComponent } from './components/alert/alert.component';
     ListItemComponent,
     ErrorMessagePipe,
     ErrorMessageComponent,
+    AlertComponent,
   ],
 })
 export class SharedModule {}

@@ -2,19 +2,26 @@ form {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  max-width: 400px;
+  max-width: 100%;
+  width: 100%;
 }
 
 .input {
   display: block;
   margin-bottom: 24px;
+  max-width: 100%;
   width: 100%;
 
   &.half {
-    width: calc(50% - 12px);
+    max-width: calc(50% - 12px);
   }
 }
 
 app-button {
   width: 100%;
+}
+
+app-alert {
+  display: block;
+  margin: 16px 0;
 }

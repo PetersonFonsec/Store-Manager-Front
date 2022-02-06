@@ -21,12 +21,15 @@ export class FormRegisterComponent implements OnDestroy {
   }
 
   submit(): void {
+    this.errorMessage = '';
     this.loading = true;
 
     this.subscription = this.authService.signup(this.user).subscribe({
       next: async () => await this.router.navigateByUrl('/'),
-      error: ({ message }) => (this.errorMessage = message),
-      complete: () => (this.loading = false),
+      error: ({ message }) => {
+        this.errorMessage = message;
+        this.loading = false;
+      },
     });
   }
 }

@@ -21,12 +21,15 @@ export class FormLoginComponent implements OnDestroy {
   }
 
   submit(): void {
+    this.errorMessage = '';
     this.loading = true;
 
     this.subscription = this.authService.login(this.user).subscribe({
       next: async () => await this.router.navigateByUrl('/'),
-      error: () => (this.loading = false),
-      complete: () => (this.loading = false),
+      error: ({ message }) => {
+        this.errorMessage = message;
+        this.loading = false;
+      },
     });
   }
 }

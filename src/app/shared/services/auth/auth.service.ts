@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { IAuthResponse, ILoginParam, ISignupParam } from './auth.model';
@@ -10,7 +11,7 @@ import { IAuthResponse, ILoginParam, ISignupParam } from './auth.model';
 export class AuthService {
   readonly urlApi = `${environment.urlApi}auth`;
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient, private router: Router) {}
 
   set token(token: string) {
     localStorage.setItem(environment.token, token);
@@ -37,8 +38,9 @@ export class AuthService {
       .pipe(map((response) => this.setToken<IAuthResponse>(response)));
   }
 
-  logout(): Observable<any> {
-    return this.httpClient.get(`${this.urlApi}/logout`);
+  async logout(): Promise<any> {
+    localStorage.removeItem(environment.token);
+    await this.router.navigateByUrl('/signup');
   }
 
   refresh(): Observable<any> {

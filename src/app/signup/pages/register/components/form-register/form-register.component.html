@@ -1,6 +1,20 @@
 <form novalidate="false" (submit)="submit()" autocomplete="off" #form="ngForm">
   <div class="input">
     <app-input-text
+      id="name"
+      name="name"
+      label="name"
+      #name="ngModel"
+      placeholder="Name"
+      [(ngModel)]="user.name"
+      [error]="!!name.invalid && !!name.touched"
+      required
+    ></app-input-text>
+    <app-error-message [model]="name"> </app-error-message>
+  </div>
+
+  <div class="input">
+    <app-input-text
       id="email"
       name="email"
       label="Email"
@@ -30,19 +44,23 @@
 
   <div class="input half">
     <app-input-password
-      id="confirmPassword"
-      name="confirmPassword"
+      id="confirm_password"
+      name="confirm_password"
       label="Confirm Password"
       placeholder="Confirm Password"
-      [(ngModel)]="user.confirmPassword"
-      [error]="!!confirmPassword.errors && !!confirmPassword.touched"
-      #confirmPassword="ngModel"
+      [(ngModel)]="user.confirm_password"
+      [error]="!!confirm_password.errors && !!confirm_password.touched"
+      #confirm_password="ngModel"
       required
     ></app-input-password>
-    <app-error-message [model]="confirmPassword"> </app-error-message>
+    <app-error-message [model]="confirm_password"> </app-error-message>
   </div>
 
   <app-button [loading]="loading" [disabled]="!!form.invalid" type="submit">
     Register
   </app-button>
 </form>
+
+<app-alert *ngIf="errorMessage">
+  {{ errorMessage }}
+</app-alert>
