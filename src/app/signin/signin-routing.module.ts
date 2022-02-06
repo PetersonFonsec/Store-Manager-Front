@@ -15,7 +15,7 @@ const routes: Routes = [
         path: 'dashboard',
         loadChildren: () =>
           import('./pages/dashboard/dashboard.module').then(
-            (m) => m.DashboardModule
+            (m) => m.DashboardModule,
           ),
         data: {
           title: 'Dashboard',
@@ -25,7 +25,7 @@ const routes: Routes = [
         path: 'produtos',
         loadChildren: () =>
           import('./pages/products/products.module').then(
-            (m) => m.ProductsModule
+            (m) => m.ProductsModule,
           ),
         data: {
           title: 'Produtos',
@@ -43,7 +43,7 @@ const routes: Routes = [
         path: 'fornecedores',
         loadChildren: () =>
           import('./pages/provides/provides.module').then(
-            (m) => m.ProvidesModule
+            (m) => m.ProvidesModule,
           ),
         data: {
           title: 'Fornecedores',
