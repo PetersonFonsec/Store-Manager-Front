@@ -18,17 +18,17 @@ export const pages: PageLink[] = [
   },
   {
     link: 'produtos',
-    content: 'Produtos',
+    content: 'Products',
     icon: faBoxOpen,
   },
   {
     link: 'fornecedores',
-    content: 'Fornecedores',
+    content: 'Providers',
     icon: faPeopleCarry,
   },
   {
     link: 'vendas',
-    content: 'vendas',
+    content: 'Sales',
     icon: faPeopleCarry,
   },
 ];

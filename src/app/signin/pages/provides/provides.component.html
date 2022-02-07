@@ -1,8 +1,23 @@
 <app-form-search></app-form-search>
 
-<!-- <app-tables-products>
-  <app-tables-products-header></app-tables-products-header>
-  <app-tables-products-item
-    *ngFor="let item of [0, 1, 2, 3, 4, 5, 6, 7, 8]"
-  ></app-tables-products-item>
-</app-tables-products> -->
+<app-generic-table domain="Provides">
+  <app-table-provides-header></app-table-provides-header>
+
+  <ng-container *ngIf="provider$ | async as providers; else loading">
+    <app-table-provides-item
+      *ngFor="let provider of providers"
+      [provider]="provider"
+    ></app-table-provides-item>
+
+    <app-generic-item *ngIf="!providers.length">
+      No provider registered
+    </app-generic-item>
+  </ng-container>
+
+  <ng-template #loading>
+    <app-generic-item-loading></app-generic-item-loading>
+    <app-generic-item-loading></app-generic-item-loading>
+    <app-generic-item-loading></app-generic-item-loading>
+    <app-generic-item-loading></app-generic-item-loading>
+  </ng-template>
+</app-generic-table>

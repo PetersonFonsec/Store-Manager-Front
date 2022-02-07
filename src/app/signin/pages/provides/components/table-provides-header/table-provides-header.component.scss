@@ -1,0 +1,22 @@
+.item {
+  border-bottom: 1px solid #dfe0eb;
+  color: #9fa2b4;
+  display: flex;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.2px;
+  line-height: 18px;
+  padding: 0 32px 12px;
+  text-align: right;
+
+  &_cell {
+    align-items: center;
+    display: flex;
+    flex: 1;
+
+    &.lg {
+      flex: 1 20%;
+      justify-content: flex-start;
+    }
+  }
+}

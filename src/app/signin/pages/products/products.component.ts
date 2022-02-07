@@ -13,7 +13,7 @@ export class ProductsComponent implements OnInit {
   products$: Observable<IProduct[]>;
 
   constructor(private productService: ProductService) {
-    this.products$ = this.productService.getAll<IProduct[]>();
+    this.products$ = this.productService.getAll();
   }
 
   ngOnInit(): void {
