@@ -1,32 +1,28 @@
 <div class="item" role="listitem">
   <div class="item_cell lg">
-    <app-avatar
-      name="Jones Ferdinand"
-      avatar="https://dummyimage.com/60x60/000/fff"
-    ></app-avatar>
+    <app-avatar [name]="product.name" [avatar]="product.photo"></app-avatar>
 
     <div class="item_description">
-      Contact Email not Linked
-      <small>Updated 1 day ago</small>
+      {{ product.name }}
     </div>
   </div>
 
   <div class="item_cell">
     <div class="item_description">
-      Tom Cruise
-      <small>on 24.05.2019</small>
+      {{ product.description }}
     </div>
   </div>
 
   <div class="item_cell">
     <div class="item_description">
-      May 26, 2019
-      <small>6:30 PM</small>
+      {{ product.price_buy }}
     </div>
   </div>
 
   <div class="item_cell">
-    <app-badge color="green">Normal</app-badge>
+    <div class="item_description">
+      {{ product.price_sale }}
+    </div>
   </div>
 
   <div class="item_cell small">
