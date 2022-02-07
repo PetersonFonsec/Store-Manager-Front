@@ -1,0 +1,12 @@
+<form [formGroup]="form" (submit)="submit()" class="form content">
+  <app-input-text
+    class="input"
+    label="Search"
+    formControlName="search"
+    [error]="!!form.get('search')?.touched && !!form.get('search')?.invalid"
+  ></app-input-text>
+
+  <app-error-message [control]="form.get('search')"></app-error-message>
+
+  <app-button [disabled]="form.invalid" type="submit">Search</app-button>
+</form>

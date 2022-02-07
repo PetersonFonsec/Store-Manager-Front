@@ -17,11 +17,12 @@ import { ListComponent } from './components/list/list.component';
 import { ListItemComponent } from './components/itens/list-item/list-item.component';
 import { ErrorMessagePipe } from './pipes/error-message/error-message.pipe';
 import { ErrorMessageComponent } from './components/error-message/error-message.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AlertComponent } from './components/alert/alert.component';
 import { GenericTableComponent } from './components/tables/generic-table/generic-table.component';
 import { GenericItemComponent } from './components/itens/generic-item/generic-item.component';
 import { GenericItemLoadingComponent } from './components/itens/generic-item-loading/generic-item-loading.component';
+import { FormSearchComponent } from './components/forms/form-search/form-search.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { GenericItemLoadingComponent } from './components/itens/generic-item-loa
     GenericTableComponent,
     GenericItemComponent,
     GenericItemLoadingComponent,
+    FormSearchComponent,
   ],
   imports: [
     CommonModule,
@@ -48,6 +50,7 @@ import { GenericItemLoadingComponent } from './components/itens/generic-item-loa
     RouterModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   exports: [
     AsideComponent,
@@ -66,6 +69,7 @@ import { GenericItemLoadingComponent } from './components/itens/generic-item-loa
     GenericTableComponent,
     GenericItemComponent,
     GenericItemLoadingComponent,
+    FormSearchComponent,
   ],
 })
 export class SharedModule {}
