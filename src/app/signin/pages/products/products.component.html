@@ -6,11 +6,10 @@
   <ng-container *ngIf="products$ | async as products; else loading">
     <app-tables-products-item
       *ngFor="let product of products"
-      [ngIf]="products.length"
       [product]="product"
     ></app-tables-products-item>
 
-    <app-generic-item *ngIf="products.length">
+    <app-generic-item *ngIf="!products.length">
       No products registered
     </app-generic-item>
   </ng-container>
