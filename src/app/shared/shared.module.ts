@@ -10,11 +10,8 @@ import { ButtonComponent } from './components/button/button.component';
 import { InputTextComponent } from './components/inputs/input-text/input-text.component';
 import { InputPasswordComponent } from './components/inputs/input-password/input-password.component';
 import { HeaderComponent } from './components/header/header.component';
-import { TablesProductsComponent } from './components/tables/tables-products/tables-products.component';
-import { TablesProductsItemComponent } from './components/itens/tables-products-item/tables-products-item.component';
 import { AvatarComponent } from './components/avatar/avatar.component';
 import { BadgeComponent } from './components/badge/badge.component';
-import { TablesProductsHeaderComponent } from './components/itens/tables-products-header/tables-products-header.component';
 import { ContainerComponent } from './components/container/container.component';
 import { ListComponent } from './components/list/list.component';
 import { ListItemComponent } from './components/itens/list-item/list-item.component';
@@ -22,6 +19,9 @@ import { ErrorMessagePipe } from './pipes/error-message/error-message.pipe';
 import { ErrorMessageComponent } from './components/error-message/error-message.component';
 import { FormsModule } from '@angular/forms';
 import { AlertComponent } from './components/alert/alert.component';
+import { GenericTableComponent } from './components/tables/generic-table/generic-table.component';
+import { GenericItemComponent } from './components/itens/generic-item/generic-item.component';
+import { GenericItemLoadingComponent } from './components/itens/generic-item-loading/generic-item-loading.component';
 
 @NgModule({
   declarations: [
@@ -30,17 +30,17 @@ import { AlertComponent } from './components/alert/alert.component';
     InputTextComponent,
     InputPasswordComponent,
     HeaderComponent,
-    TablesProductsComponent,
-    TablesProductsItemComponent,
     AvatarComponent,
     BadgeComponent,
-    TablesProductsHeaderComponent,
     ContainerComponent,
     ListComponent,
     ListItemComponent,
     ErrorMessagePipe,
     ErrorMessageComponent,
     AlertComponent,
+    GenericTableComponent,
+    GenericItemComponent,
+    GenericItemLoadingComponent,
   ],
   imports: [
     CommonModule,
@@ -55,17 +55,17 @@ import { AlertComponent } from './components/alert/alert.component';
     InputTextComponent,
     InputPasswordComponent,
     HeaderComponent,
-    TablesProductsComponent,
-    TablesProductsItemComponent,
     AvatarComponent,
     BadgeComponent,
-    TablesProductsHeaderComponent,
     ContainerComponent,
     ListComponent,
     ListItemComponent,
     ErrorMessagePipe,
     ErrorMessageComponent,
     AlertComponent,
+    GenericTableComponent,
+    GenericItemComponent,
+    GenericItemLoadingComponent,
   ],
 })
 export class SharedModule {}

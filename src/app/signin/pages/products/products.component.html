@@ -1,8 +1,24 @@
 <app-form-search></app-form-search>
 
-<app-tables-products>
+<app-generic-table domain="Products">
   <app-tables-products-header></app-tables-products-header>
-  <app-tables-products-item
-    *ngFor="let item of [0, 1, 2, 3, 4, 5, 6, 7, 8]"
-  ></app-tables-products-item>
-</app-tables-products>
+
+  <ng-container *ngIf="products$ | async as products; else loading">
+    <app-tables-products-item
+      *ngFor="let product of products"
+      [ngIf]="products.length"
+      [product]="product"
+    ></app-tables-products-item>
+
+    <app-generic-item *ngIf="products.length">
+      No products registered
+    </app-generic-item>
+  </ng-container>
+
+  <ng-template #loading>
+    <app-generic-item-loading></app-generic-item-loading>
+    <app-generic-item-loading></app-generic-item-loading>
+    <app-generic-item-loading></app-generic-item-loading>
+    <app-generic-item-loading></app-generic-item-loading>
+  </ng-template>
+</app-generic-table>
