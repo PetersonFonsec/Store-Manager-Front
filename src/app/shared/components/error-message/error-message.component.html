@@ -1,3 +1,6 @@
-<span class="error" *ngIf="model.invalid && model.touched" role="alert">
-  {{ model.errors | errorMessage }}
+<span class="error" *ngIf="model?.invalid && model?.touched" role="alert">
+  {{ model?.errors | errorMessage }}
+</span>
+<span class="error" *ngIf="control?.invalid && control?.touched" role="alert">
+  {{ control?.errors | errorMessage }}
 </span>

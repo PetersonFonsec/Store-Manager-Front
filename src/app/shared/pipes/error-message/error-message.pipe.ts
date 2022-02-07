@@ -5,7 +5,7 @@ import { ValidationErrors } from '@angular/forms';
   name: 'errorMessage',
 })
 export class ErrorMessagePipe implements PipeTransform {
-  transform(errorsObject: ValidationErrors | null): string {
+  transform(errorsObject: ValidationErrors | null | undefined): string {
     const allPossibleErrors: ValidationErrors = {
       required: 'Campo obrigatório',
       email: 'Email invalido',

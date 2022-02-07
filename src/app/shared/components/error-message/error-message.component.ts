@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { NgModel } from '@angular/forms';
+import { AbstractControl, NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-error-message',
@@ -7,5 +7,6 @@ import { NgModel } from '@angular/forms';
   styleUrls: ['./error-message.component.scss'],
 })
 export class ErrorMessageComponent {
-  @Input() model!: NgModel;
+  @Input() control: AbstractControl | null | undefined;
+  @Input() model: NgModel | null | undefined;
 }
