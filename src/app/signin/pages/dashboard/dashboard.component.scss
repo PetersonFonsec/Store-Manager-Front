@@ -2,7 +2,11 @@
   display: grid;
   flex: 1;
   grid-gap: 24px;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 
   .collumn-medium {
     grid-column: span 2;
