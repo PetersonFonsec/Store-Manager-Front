@@ -1,3 +1,7 @@
-<button class="button" [ngClass]="{ loading: loading }" [disabled]="disabled">
+<button
+  class="button {{ color }}"
+  [ngClass]="{ loading }"
+  [disabled]="disabled"
+>
   <ng-content></ng-content>
 </button>

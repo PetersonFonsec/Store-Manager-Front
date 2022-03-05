@@ -8,4 +8,5 @@ import { Component, Input } from '@angular/core';
 export class ButtonComponent {
   @Input() disabled = false;
   @Input() loading = false;
+  @Input() color: 'blue' | 'red' = 'blue';
 }

@@ -1,8 +1,7 @@
 .button {
-  background: var(--primary);
   border-radius: 8px;
   box-shadow: 0px 4px 12px rgba(55, 81, 255, 0.24);
-  color: #ffffff;
+  color: var(--white);
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.2px;
@@ -13,6 +12,16 @@
   transition: var(--transition);
   width: 100%;
 
+  //colors
+  &.blue {
+    background: var(--primary);
+  }
+
+  &.red {
+    background: var(--red);
+  }
+
+  //states
   &:hover {
     filter: brightness(1.1);
   }
