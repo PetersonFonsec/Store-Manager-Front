@@ -8,18 +8,28 @@ import { TableProvidesHeaderComponent } from './components/table-provides-header
 import { TableProvidesItemComponent } from './components/table-provides-item/table-provides-item.component';
 import { ProviderService } from './services/providers/provider.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FormProvidesComponent } from './components/form-provides/form-provides.component';
+import { ModalCreateComponent } from './components/modal-create/modal-create.component';
+import { ModalUpdateComponent } from './components/modal-update/modal-update.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
     ProvidesComponent,
     TableProvidesHeaderComponent,
     TableProvidesItemComponent,
+    FormProvidesComponent,
+    ModalCreateComponent,
+    ModalUpdateComponent,
   ],
   imports: [
     CommonModule,
     ProvidesRoutingModule,
     SharedModule,
     FontAwesomeModule,
+    ReactiveFormsModule,
+    MatDialogModule,
   ],
   providers: [ProviderService],
 })
