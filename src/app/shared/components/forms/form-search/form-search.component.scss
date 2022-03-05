@@ -8,4 +8,8 @@
     flex: 1;
     margin-right: 24px;
   }
+
+  app-button:not(:last-child) {
+    margin-right: 14px;
+  }
 }

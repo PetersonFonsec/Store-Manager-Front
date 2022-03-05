@@ -9,4 +9,7 @@
   <app-error-message [control]="form.get('search')"></app-error-message>
 
   <app-button [disabled]="form.invalid" type="submit">Search</app-button>
+  <app-button color="red" (click)="createClick()" type="button">
+    Criar
+  </app-button>
 </form>

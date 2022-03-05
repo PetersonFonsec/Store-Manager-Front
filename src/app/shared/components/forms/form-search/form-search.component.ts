@@ -8,6 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class FormSearchComponent implements OnInit {
   @Output() search = new EventEmitter<string>();
+  @Output() createItem = new EventEmitter<void>();
   @Input() placeholder = '';
   form!: FormGroup;
 
@@ -22,5 +23,9 @@ export class FormSearchComponent implements OnInit {
   submit(): void {
     const { search } = this.form.getRawValue();
     this.search.emit(search);
+  }
+
+  createClick(): void {
+    this.createItem.emit();
   }
 }
