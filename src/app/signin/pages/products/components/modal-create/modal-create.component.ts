@@ -1,32 +1,36 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { Component, OnDestroy } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Subscription } from 'rxjs';
 import { IProductCreate } from '../../interfaces/products';
+import { ProductService } from '../../services/product/product.service';
 
 @Component({
   selector: 'app-modal-create',
   templateUrl: './modal-create.component.html',
   styleUrls: ['./modal-create.component.scss'],
 })
-export class ModalCreateComponent implements OnInit {
-  @Output() submit = new EventEmitter<IProductCreate>();
-  iconClose = faTimes;
-  form!: FormGroup;
+export class ModalCreateComponent implements OnDestroy {
+  subscription: Subscription | undefined;
+  loading = false;
+  constructor(
+    private productService: ProductService,
+    private dialog: MatDialog,
+  ) {}
 
-  constructor(private formBuilder: FormBuilder) {}
-
-  ngOnInit(): void {
-    this.form = this.formBuilder.group({
-      description: [null, Validators.required],
-      price_sale: [null, Validators.required],
-      price_buy: [null, Validators.required],
-      photo: [null],
-      name: [null, Validators.required],
+  createProduct(product: IProductCreate): void {
+    this.loading = true;
+    this.subscription = this.productService.create(product).subscribe({
+      next: () => {
+        this.dialog.closeAll();
+        this.loading = false;
+      },
+      error: ({ message }) => {
+        this.loading = false;
+      },
     });
   }
 
-  _submit(): void {
-    const form = this.form.getRawValue();
-    this.submit.emit(form);
+  ngOnDestroy(): void {
+    this.subscription?.unsubscribe();
   }
 }
