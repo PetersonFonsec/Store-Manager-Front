@@ -28,4 +28,12 @@ export class ProductsComponent implements OnInit {
   createItem(): void {
     this.dialog.open(ModalCreateComponent);
   }
+
+  updateItem(): void {
+    this.dialog.open(ModalCreateComponent);
+  }
+
+  deleteItem(): void {
+    this.dialog.open(ModalCreateComponent);
+  }
 }
