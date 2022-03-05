@@ -1,19 +1,23 @@
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 import { ProductsComponent } from './products.component';
-import { ProductsRoutingModule } from './products-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { ProductsRoutingModule } from './products-routing.module';
 import { ProductService } from './services/product/product.service';
-import { TablesProductsHeaderComponent } from './components/tables-products-header/tables-products-header.component';
 import { TablesProductsItemComponent } from './components/tables-products-item/tables-products-item.component';
+import { TablesProductsHeaderComponent } from './components/tables-products-header/tables-products-header.component';
+import { ModalCreateComponent } from './components/modal-create/modal-create.component';
 
 @NgModule({
   declarations: [
     ProductsComponent,
     TablesProductsHeaderComponent,
     TablesProductsItemComponent,
+    ModalCreateComponent,
   ],
   imports: [
     CommonModule,
@@ -21,6 +25,8 @@ import { TablesProductsItemComponent } from './components/tables-products-item/t
     SharedModule,
     FormsModule,
     FontAwesomeModule,
+    MatDialogModule,
+    ReactiveFormsModule,
   ],
   exports: [ProductsComponent],
   providers: [ProductService],
