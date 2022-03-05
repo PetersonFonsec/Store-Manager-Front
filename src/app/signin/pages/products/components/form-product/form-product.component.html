@@ -1,0 +1,66 @@
+<form [formGroup]="form" (submit)="_submit()">
+  <h3 class="title">Formulário para criar um novo produto</h3>
+
+  <div class="input center">
+    <app-input-photo formControlName="photo"></app-input-photo>
+  </div>
+
+  <div class="input">
+    <app-input-text
+      label="nome"
+      placeholder="Nome do produto"
+      formControlName="name"
+      [error]="!!form.get('name')?.touched && !!form.get('name')?.invalid"
+    ></app-input-text>
+    <app-error-message [control]="form.get('name')"> </app-error-message>
+  </div>
+
+  <div class="input">
+    <app-input-text
+      label="descrição"
+      placeholder="Descrição do produto"
+      formControlName="description"
+      [error]="
+        !!form.get('description')?.touched && !!form.get('description')?.invalid
+      "
+    ></app-input-text>
+    <app-error-message [control]="form.get('description')"> </app-error-message>
+  </div>
+
+  <div class="input half">
+    <app-input-currency
+      label="preço de compra"
+      placeholder="R$ 0,00"
+      formControlName="price_buy"
+      [error]="
+        !!form.get('price_buy')?.touched && !!form.get('price_buy')?.invalid
+      "
+    ></app-input-currency>
+    <app-error-message [control]="form.get('price_buy')"> </app-error-message>
+  </div>
+
+  <div class="input half">
+    <app-input-currency
+      label="preço de venda"
+      placeholder="R$ 0,00"
+      formControlName="price_sale"
+      [error]="
+        !!form.get('price_sale')?.touched && !!form.get('price_sale')?.invalid
+      "
+    ></app-input-currency>
+    <app-error-message [control]="form.get('price_sale')"> </app-error-message>
+  </div>
+
+  <app-button
+    [loading]="loading"
+    [disabled]="form.invalid"
+    type="submit"
+    color="red"
+  >
+    Criar produto
+  </app-button>
+
+  <button mat-dialog-close class="closeButton" type="button">
+    <fa-icon [icon]="iconClose"></fa-icon>
+  </button>
+</form>
