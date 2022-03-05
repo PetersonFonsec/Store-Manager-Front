@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Title } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
 import { scrollToTop } from 'src/app/shared/utils/scroll-to-top';
+import { environment } from 'src/environments/environment';
 import { ModalCreateComponent } from './components/modal-create/modal-create.component';
 import { IProvider } from './interfaces/provider';
 import { ProviderService } from './services/providers/provider.service';
@@ -17,11 +19,13 @@ export class ProvidesComponent implements OnInit {
   constructor(
     private providerService: ProviderService,
     private dialog: MatDialog,
+    private title: Title,
   ) {
     this.provider$ = this.providerService.getAll();
   }
 
   ngOnInit(): void {
+    this.title.setTitle(`${environment.app_name} | Fornecedores`);
     scrollToTop();
   }
 
