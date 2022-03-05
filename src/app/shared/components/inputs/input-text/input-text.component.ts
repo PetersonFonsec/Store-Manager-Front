@@ -18,6 +18,7 @@ export class InputTextComponent implements OnInit, ControlValueAccessor {
   @Input() type = 'text';
   @Input() error = false;
   @Input() label = '';
+  @Input() mask = '';
   @Input() id = '';
   val = '';
 
