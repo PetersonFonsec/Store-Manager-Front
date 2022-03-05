@@ -1,0 +1,15 @@
+<div class="input-photo">
+  <img *ngIf="value.b64" [src]="value.b64" class="input-photo_photo" />
+  <input
+    #inputFile
+    type="file"
+    [id]="id"
+    [name]="id"
+    (change)="showImage($event)"
+    accept="image/png, image/jpeg"
+    class="input-photo_input"
+  />
+  <button (click)="inputFile.click()" class="input-photo_button">
+    <fa-icon [icon]="iconUpload"></fa-icon>
+  </button>
+</div>
