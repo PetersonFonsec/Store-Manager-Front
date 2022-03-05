@@ -1,0 +1,72 @@
+<form (submit)="_submit()" [formGroup]="form">
+  <h3 class="title">Formulário para criar um novo fornecedor</h3>
+
+  <div class="input center">
+    <app-input-photo
+      id="name"
+      label="Nome"
+      placeholder="Nome do fornecedor"
+      formControlName="name"
+    ></app-input-photo>
+    <app-error-message [control]="form.get('name')"> </app-error-message>
+  </div>
+
+  <div class="input">
+    <app-input-text
+      id="name"
+      label="Nome"
+      placeholder="Nome do fornecedor"
+      [error]="!!form.get('name')?.invalid && !!form.get('name')?.touched"
+      formControlName="name"
+    ></app-input-text>
+    <app-error-message [control]="form.get('name')"> </app-error-message>
+  </div>
+
+  <div class="input">
+    <app-input-text
+      id="representative"
+      label="Representante"
+      placeholder="Nome do representante"
+      [error]="
+        !!form.get('representative')?.invalid &&
+        !!form.get('representative')?.touched
+      "
+      formControlName="representative"
+    ></app-input-text>
+    <app-error-message [control]="form.get('representante')">
+    </app-error-message>
+  </div>
+
+  <div class="input">
+    <app-input-text
+      id="email"
+      label="email"
+      placeholder="email do fornecedor"
+      [error]="!!form.get('email')?.invalid && !!form.get('email')?.touched"
+      formControlName="email"
+    ></app-input-text>
+    <app-error-message [control]="form.get('email')"> </app-error-message>
+  </div>
+
+  <div class="input">
+    <app-input-text
+      id="cellphone"
+      label="Celular"
+      formControlName="celphone"
+      placeholder="Celular de contato"
+      [error]="
+        !!form.get('celphone')?.invalid && !!form.get('celphone')?.touched
+      "
+      mask="(00) 0 0000-0000||(00) 0000-0000"
+    ></app-input-text>
+    <app-error-message [control]="form.get('celphone')"> </app-error-message>
+  </div>
+
+  <app-button color="red" [disabled]="form.invalid" [loading]="loading">
+    Cadastrar um novo fornecedor
+  </app-button>
+
+  <button type="button" mat-dialog-close class="closeButton">
+    <fa-icon [icon]="closeIcon"></fa-icon>
+  </button>
+</form>
