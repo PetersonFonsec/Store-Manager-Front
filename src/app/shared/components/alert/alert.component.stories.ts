@@ -1,13 +1,16 @@
-// also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { Story, Meta } from '@storybook/angular/types-6-0';
 import { AlertComponent as Alert } from './alert.component';
+
+class AlertStory extends Alert {
+  text = '';
+}
 
 export default {
   title: 'Shared Component/Alert',
   component: Alert,
 } as Meta;
 
-const Template: Story = (args: any) => ({
+const Template: Story<AlertStory> = (args: AlertStory) => ({
   props: args,
   template: `
     <app-alert type="${args.type}">
