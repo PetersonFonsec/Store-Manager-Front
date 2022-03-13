@@ -6,7 +6,7 @@ class ButtonStory extends Button {
 }
 
 export default {
-  title: 'Shared Component/Button',
+  title: 'Shared/Button',
   component: Button,
 } as Meta;
 
