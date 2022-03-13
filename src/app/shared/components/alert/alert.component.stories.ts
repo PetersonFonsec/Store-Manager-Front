@@ -6,7 +6,7 @@ class AlertStory extends Alert {
 }
 
 export default {
-  title: 'Shared Component/Alert',
+  title: 'Shared/Alert',
   component: Alert,
 } as Meta;
 
