@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-avatar',
@@ -6,6 +7,8 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./avatar.component.scss'],
 })
 export class AvatarComponent {
+  urlBase = environment.urlApi;
   @Input() avatar = '';
   @Input() name = '';
+  @Input() prefix = '';
 }

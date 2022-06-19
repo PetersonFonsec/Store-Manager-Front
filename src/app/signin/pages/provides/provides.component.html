@@ -1,4 +1,7 @@
-<app-form-search (createItem)="showModal()"></app-form-search>
+<app-form-search
+  (createItem)="showModal()"
+  placeholder="Busca por fonecedores"
+></app-form-search>
 
 <app-generic-table domain="Provides">
   <app-table-provides-header></app-table-provides-header>
@@ -15,9 +18,7 @@
   </ng-container>
 
   <ng-template #loading>
-    <app-generic-item-loading></app-generic-item-loading>
-    <app-generic-item-loading></app-generic-item-loading>
-    <app-generic-item-loading></app-generic-item-loading>
-    <app-generic-item-loading></app-generic-item-loading>
+    <app-generic-item-loading *ngFor="let i of [1, 2, 3]">
+    </app-generic-item-loading>
   </ng-template>
 </app-generic-table>

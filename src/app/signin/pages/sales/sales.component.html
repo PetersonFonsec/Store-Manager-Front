@@ -1,8 +1,24 @@
-<app-form-search></app-form-search>
+<app-form-search
+  (createItem)="showModal()"
+  placeholder="Search the salle"
+></app-form-search>
 
-<!-- <app-tables-products>
-  <app-tables-products-header></app-tables-products-header>
-  <app-tables-products-item
-    *ngFor="let item of [0, 1, 2, 3, 4, 5, 6, 7, 8]"
-  ></app-tables-products-item>
-</app-tables-products> -->
+<app-generic-table domain="Sales">
+  <app-tables-sales-header></app-tables-sales-header>
+
+  <ng-container *ngIf="salle$ | async as sales; else loading">
+    <app-tables-sales-item
+      *ngFor="let salle of sales"
+      [salle]="salle"
+    ></app-tables-sales-item>
+
+    <app-generic-item *ngIf="!sales.length">
+      No sales registered
+    </app-generic-item>
+  </ng-container>
+
+  <ng-template #loading>
+    <app-generic-item-loading *ngFor="let i of [1, 2, 3]">
+    </app-generic-item-loading>
+  </ng-template>
+</app-generic-table>

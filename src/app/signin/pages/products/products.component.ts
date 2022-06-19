@@ -30,14 +30,29 @@ export class ProductsComponent implements OnInit {
   }
 
   createItem(): void {
-    this.dialog.open(ModalCreateComponent);
+    this.dialog
+      .open(ModalCreateComponent)
+      .afterClosed()
+      .subscribe(() => {
+        this.products$ = this.productService.getAll();
+      });
   }
 
   updateItem(): void {
-    this.dialog.open(ModalCreateComponent);
+    this.dialog
+      .open(ModalCreateComponent)
+      .afterClosed()
+      .subscribe(() => {
+        this.products$ = this.productService.getAll();
+      });
   }
 
   deleteItem(): void {
-    this.dialog.open(ModalCreateComponent);
+    this.dialog
+      .open(ModalCreateComponent)
+      .afterClosed()
+      .subscribe(() => {
+        this.products$ = this.productService.getAll();
+      });
   }
 }

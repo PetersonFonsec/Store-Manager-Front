@@ -1,31 +1,30 @@
 <div class="item" role="listitem">
   <div class="item_cell lg">
     <app-avatar
-      prefix="products_photo"
-      [name]="product.name"
-      [avatar]="product.photo"
+      [name]="salle.product?.name ?? ''"
+      [avatar]="salle.product?.photo ?? ''"
     ></app-avatar>
 
     <div class="item_description">
-      {{ product.name }}
+      {{ salle.product?.name }}
     </div>
   </div>
 
   <div class="item_cell">
     <div class="item_description">
-      {{ product.description }}
+      {{ salle?.price }}
     </div>
   </div>
 
   <div class="item_cell">
     <div class="item_description">
-      {{ product.price_buy }}
+      {{ salle?.quantity }}
     </div>
   </div>
 
   <div class="item_cell">
     <div class="item_description">
-      {{ product.price_sale }}
+      {{ salle?.createdAt }}
     </div>
   </div>
 

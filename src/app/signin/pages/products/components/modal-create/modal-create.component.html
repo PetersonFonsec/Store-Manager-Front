@@ -1,4 +1,8 @@
 <app-form-product
   [loading]="loading"
-  (submit)="createProduct($event)"
+  (create)="createProduct($event)"
 ></app-form-product>
+
+<app-alert *ngIf="errorMessage">
+  {{ errorMessage }}
+</app-alert>

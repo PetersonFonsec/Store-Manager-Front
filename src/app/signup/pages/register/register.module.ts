@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
-import { SharedModule } from 'src/app/shared/shared.module';
-
-import { RegisterRoutingModule } from './register-routing.module';
 import { RegisterComponent } from './register.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { RegisterRoutingModule } from './register-routing.module';
 import { FormRegisterComponent } from './components/form-register/form-register.component';
-import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [RegisterComponent, FormRegisterComponent],

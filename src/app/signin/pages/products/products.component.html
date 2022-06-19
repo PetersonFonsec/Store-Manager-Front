@@ -1,4 +1,7 @@
-<app-form-search (createItem)="createItem()"></app-form-search>
+<app-form-search
+  (createItem)="createItem()"
+  placeholder="Search the product"
+></app-form-search>
 
 <app-generic-table domain="Products">
   <app-tables-products-header></app-tables-products-header>
@@ -15,9 +18,7 @@
   </ng-container>
 
   <ng-template #loading>
-    <app-generic-item-loading></app-generic-item-loading>
-    <app-generic-item-loading></app-generic-item-loading>
-    <app-generic-item-loading></app-generic-item-loading>
-    <app-generic-item-loading></app-generic-item-loading>
+    <app-generic-item-loading *ngFor="let i of [1, 2, 3]">
+    </app-generic-item-loading>
   </ng-template>
 </app-generic-table>

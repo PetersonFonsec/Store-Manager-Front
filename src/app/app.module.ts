@@ -10,7 +10,7 @@ import { LoggedGuard } from './shared/guards/logged.guard';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-const ERROR_INTERCEPTOR_PROVIDER = {
+export const ERROR_INTERCEPTOR_PROVIDER = {
   provide: HTTP_INTERCEPTORS,
   useClass: ErrorInterceptor,
   multi: true,

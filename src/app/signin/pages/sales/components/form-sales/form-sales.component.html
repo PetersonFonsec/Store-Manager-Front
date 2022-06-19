@@ -1,0 +1,38 @@
+<form [formGroup]="form" (submit)="_submit()">
+  <h3 class="title">Formulário para criar uma nova venda</h3>
+
+  <div class="input">
+    <app-input-text
+      label="Produto"
+      placeholder="Nome do produto"
+      formControlName="product"
+      [error]="!!form.get('product')?.touched && !!form.get('product')?.invalid"
+    ></app-input-text>
+    <app-error-message [control]="form.get('product')"> </app-error-message>
+  </div>
+
+  <div class="input">
+    <app-input-text
+      label="Quantidade"
+      placeholder="Quantidade de produto vendido"
+      formControlName="quantity"
+      [error]="
+        !!form.get('quantity')?.touched && !!form.get('quantity')?.invalid
+      "
+    ></app-input-text>
+    <app-error-message [control]="form.get('quantity')"> </app-error-message>
+  </div>
+
+  <app-button
+    [loading]="loading"
+    [disabled]="form.invalid"
+    type="submit"
+    color="red"
+  >
+    Criar venda
+  </app-button>
+
+  <button mat-dialog-close class="closeButton" type="button">
+    <fa-icon [icon]="iconClose"></fa-icon>
+  </button>
+</form>

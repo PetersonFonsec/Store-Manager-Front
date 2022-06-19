@@ -9,7 +9,7 @@ import { IProductCreate } from '../../interfaces/products';
   styleUrls: ['./form-product.component.scss'],
 })
 export class FormProductComponent implements OnInit {
-  @Output() submit = new EventEmitter<IProductCreate>();
+  @Output() create = new EventEmitter<IProductCreate>();
   @Input() loading = false;
   iconClose = faTimes;
   form!: FormGroup;
@@ -28,6 +28,6 @@ export class FormProductComponent implements OnInit {
 
   _submit(): void {
     const form = this.form.getRawValue();
-    this.submit.emit(form);
+    this.create.emit(form);
   }
 }

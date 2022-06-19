@@ -13,6 +13,7 @@ import { TablesProductsHeaderComponent } from './components/tables-products-head
 import { ModalCreateComponent } from './components/modal-create/modal-create.component';
 import { FormProductComponent } from './components/form-product/form-product.component';
 import { ModalUpdateComponent } from './components/modal-update/modal-update.component';
+import { ERROR_INTERCEPTOR_PROVIDER } from 'src/app/app.module';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,6 @@ import { ModalUpdateComponent } from './components/modal-update/modal-update.com
     ReactiveFormsModule,
   ],
   exports: [ProductsComponent],
-  providers: [ProductService],
+  providers: [ProductService, ERROR_INTERCEPTOR_PROVIDER],
 })
 export class ProductsModule {}
