@@ -9,7 +9,8 @@
     "test": "ng test",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
     "storybook": "npm run docs:json && start-storybook -p 6006",
-    "build-storybook": "npm run docs:json && build-storybook"
+    "build-storybook": "npm run docs:json && build-storybook",
+    "cypress:open": "cypress open"
   },
   "private": true,
   "dependencies": {
@@ -26,6 +27,7 @@
     "@fortawesome/angular-fontawesome": "^0.10.1",
     "@fortawesome/fontawesome-svg-core": "~1.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "cypress": "^9.5.2",
     "ngx-currency": "^2.5.3",
     "ngx-mask": "^13.1.1",
     "rxjs": "~7.4.0",
