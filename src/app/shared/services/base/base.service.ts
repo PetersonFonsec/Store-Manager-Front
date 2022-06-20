@@ -24,6 +24,12 @@ export class BaseService {
     return this.httpClient.get<TGetAll>(this.urlApi);
   }
 
+  getBySearch<TGetAll>(term: string): Observable<TGetAll> {
+    let url = this.urlApi;
+    url += `?search=${term}`;
+    return this.httpClient.get<TGetAll>(url);
+  }
+
   create<TCreate, TParams>(params: TParams): Observable<TCreate> {
     return this.httpClient.post<TCreate>(this.urlApi, params);
   }

@@ -1,4 +1,8 @@
 <app-form-provides
   [loading]="loading"
-  (submit)="createProvider($event)"
+  (create)="createProvider($event)"
 ></app-form-provides>
+
+<app-alert *ngIf="errorMessage">
+  {{ errorMessage }}
+</app-alert>

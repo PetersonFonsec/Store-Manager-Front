@@ -38,21 +38,7 @@ export class ProductsComponent implements OnInit {
       });
   }
 
-  updateItem(): void {
-    this.dialog
-      .open(ModalCreateComponent)
-      .afterClosed()
-      .subscribe(() => {
-        this.products$ = this.productService.getAll();
-      });
-  }
-
-  deleteItem(): void {
-    this.dialog
-      .open(ModalCreateComponent)
-      .afterClosed()
-      .subscribe(() => {
-        this.products$ = this.productService.getAll();
-      });
+  search(productName: string): void {
+    this.products$ = this.productService.getBySearch(productName);
   }
 }

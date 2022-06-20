@@ -1,6 +1,7 @@
 <app-form-search
   (createItem)="showModal()"
-  placeholder="Busca por fonecedores"
+  (search)="search($event)"
+  placeholder="Search by provider name"
 ></app-form-search>
 
 <app-generic-table domain="Provides">

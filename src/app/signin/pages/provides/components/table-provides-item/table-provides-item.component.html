@@ -1,6 +1,10 @@
 <div class="item" role="listitem">
   <div class="item_cell lg">
-    <app-avatar [name]="provider.name" [avatar]="provider.photo"></app-avatar>
+    <app-avatar
+      [name]="provider.name"
+      prefix="providers_photo"
+      [avatar]="provider.photo"
+    ></app-avatar>
 
     <div class="item_description">
       {{ provider.name }}

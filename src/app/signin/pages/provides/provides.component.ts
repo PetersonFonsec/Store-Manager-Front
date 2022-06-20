@@ -30,6 +30,15 @@ export class ProvidesComponent implements OnInit {
   }
 
   showModal(): void {
-    this.dialog.open(ModalCreateComponent);
+    this.dialog
+      .open(ModalCreateComponent)
+      .afterClosed()
+      .subscribe(() => {
+        this.provider$ = this.providerService.getAll();
+      });
+  }
+
+  search(providerName: string): void {
+    this.provider$ = this.providerService.getBySearch(providerName);
   }
 }

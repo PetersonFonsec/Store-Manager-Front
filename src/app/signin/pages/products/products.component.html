@@ -1,6 +1,7 @@
 <app-form-search
   (createItem)="createItem()"
-  placeholder="Search the product"
+  (search)="search($event)"
+  placeholder="Search the product by name"
 ></app-form-search>
 
 <app-generic-table domain="Products">

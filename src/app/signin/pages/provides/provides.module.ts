@@ -13,6 +13,7 @@ import { ModalCreateComponent } from './components/modal-create/modal-create.com
 import { ModalUpdateComponent } from './components/modal-update/modal-update.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ERROR_INTERCEPTOR_PROVIDER } from 'src/app/app.module';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,6 @@ import { MatDialogModule } from '@angular/material/dialog';
     ReactiveFormsModule,
     MatDialogModule,
   ],
-  providers: [ProviderService],
+  providers: [ProviderService, ERROR_INTERCEPTOR_PROVIDER],
 })
 export class ProvidesModule {}

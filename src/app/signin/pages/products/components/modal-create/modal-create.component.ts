@@ -30,8 +30,8 @@ export class ModalCreateComponent implements OnDestroy {
         this.dialog.closeAll();
         this.loading = false;
       },
-      error: (err) => {
-        this.errorMessage = err.message;
+      error: ({ message }) => {
+        this.errorMessage = message;
         this.loading = false;
       },
     });

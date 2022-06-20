@@ -12,6 +12,7 @@ import { IProvidesCreate } from '../form-provides/form-provides.component';
 export class ModalCreateComponent implements OnDestroy {
   subcription: Subscription | undefined;
   loading = false;
+  errorMessage = '';
 
   constructor(
     private providerService: ProviderService,
@@ -21,12 +22,16 @@ export class ModalCreateComponent implements OnDestroy {
   createProvider(provider: IProvidesCreate): void {
     this.loading = true;
 
-    this.subcription = this.providerService.create(provider).subscribe({
+    provider.photo = provider?.photo?.file;
+    const productFormated = this.convertToFormData(provider);
+
+    this.subcription = this.providerService.create(productFormated).subscribe({
       next: () => {
         this.dialog.closeAll();
         this.loading = false;
       },
-      error: () => {
+      error: ({ message }) => {
+        this.errorMessage = message;
         this.loading = false;
       },
     });
@@ -34,5 +39,14 @@ export class ModalCreateComponent implements OnDestroy {
 
   ngOnDestroy(): void {
     this.subcription?.unsubscribe();
+  }
+
+  convertToFormData(form: any) {
+    let form_data = new FormData();
+
+    for (let key in form) {
+      form_data.append(key, form[key]);
+    }
+    return form_data;
   }
 }
