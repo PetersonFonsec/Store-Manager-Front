@@ -3,6 +3,7 @@ export interface ISalle {
   price: number;
   quantity: number;
   createdAt: string;
+  updatedAt: string;
   product: {
     _id: string;
     name: string;
@@ -14,7 +15,6 @@ export interface ISalle {
     updatedAt: string;
   };
 }
-
 export interface ISalleCreate {
   product_id: string;
   quantity: number;

@@ -1,22 +1,22 @@
-<div class="dashboard">
+<div class="dashboard" *ngIf="dashboard$ | async as dashboard">
   <div class="card">
     <app-container>
       Produtos Cadastrados
-      <strong> 108</strong>
+      <strong>{{ dashboard.products.register }}</strong>
     </app-container>
   </div>
 
   <div class="card">
     <app-container>
       Fornecedores Cadastrados
-      <strong> 108</strong>
+      <strong>{{ dashboard.providers }}</strong>
     </app-container>
   </div>
 
   <div class="card collumn-medium">
     <app-container>
       Vendas no ultimo mês
-      <strong> 108</strong>
+      <strong> {{ dashboard.sale.length }} </strong>
     </app-container>
   </div>
 
@@ -28,9 +28,12 @@
         <span aside>Quantidade vendida</span>
       </app-list-item>
 
-      <app-list-item>Bala babalu <span aside>100</span></app-list-item>
-      <app-list-item>Bala juquinha <span aside>100</span></app-list-item>
-      <app-list-item>Bala de coração <span aside>100</span></app-list-item>
+      <app-list-item *ngFor="let product of dashboard.products.best_sellers">
+        {{ product.product.name }}
+        <span aside>
+          {{ product.quantity }}
+        </span>
+      </app-list-item>
     </app-list>
   </div>
 
@@ -42,9 +45,12 @@
         <span aside>Quantidade vendida</span>
       </app-list-item>
 
-      <app-list-item>Bala coco <span aside>0</span></app-list-item>
-      <app-list-item>Bala de veio(canela) <span aside>0</span></app-list-item>
-      <app-list-item>Bala 7belo <span aside>0</span></app-list-item>
+      <app-list-item *ngFor="let product of dashboard.products.less_sold">
+        {{ product.product.name }}
+        <span aside>
+          {{ product.quantity }}
+        </span>
+      </app-list-item>
     </app-list>
   </div>
 </div>
