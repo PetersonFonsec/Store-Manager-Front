@@ -3,7 +3,7 @@
 
   <div class="input center">
     <app-input-photo
-      id="photo"
+      id="provide-photo"
       label="photo"
       placeholder="photo do fornecedor"
       formControlName="photo"
@@ -13,7 +13,7 @@
 
   <div class="input">
     <app-input-text
-      id="name"
+      id="provide-name"
       label="Nome"
       placeholder="Nome do fornecedor"
       [error]="!!form.get('name')?.invalid && !!form.get('name')?.touched"
@@ -24,7 +24,7 @@
 
   <div class="input">
     <app-input-text
-      id="representative"
+      id="provide-representative"
       label="Representante"
       placeholder="Nome do representante"
       [error]="
@@ -39,7 +39,7 @@
 
   <div class="input">
     <app-input-text
-      id="email"
+      id="provide-email"
       label="email"
       placeholder="email do fornecedor"
       [error]="!!form.get('email')?.invalid && !!form.get('email')?.touched"
@@ -50,7 +50,7 @@
 
   <div class="input">
     <app-input-text
-      id="cellphone"
+      id="provide-cellphone"
       label="Celular"
       formControlName="celphone"
       placeholder="Celular de contato"
@@ -62,7 +62,12 @@
     <app-error-message [control]="form.get('celphone')"> </app-error-message>
   </div>
 
-  <app-button color="red" [disabled]="form.invalid" [loading]="loading">
+  <app-button
+    id="provide-submit-button"
+    color="red"
+    [disabled]="form.invalid"
+    [loading]="loading"
+  >
     Cadastrar um novo fornecedor
   </app-button>
 

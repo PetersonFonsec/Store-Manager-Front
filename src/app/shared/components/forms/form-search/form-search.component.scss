@@ -31,4 +31,14 @@
   app-button:not(:last-child) {
     margin-right: 14px;
   }
+
+  app-error-message {
+    display: block;
+    width: 100%;
+
+    @media (min-width: 768px) {
+      width: auto;
+      height: 0;
+    }
+  }
 }

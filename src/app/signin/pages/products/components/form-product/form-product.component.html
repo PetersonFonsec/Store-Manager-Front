@@ -8,6 +8,7 @@
   <div class="input">
     <app-input-text
       label="nome"
+      id="productName"
       placeholder="Nome do produto"
       formControlName="name"
       [error]="!!form.get('name')?.touched && !!form.get('name')?.invalid"
@@ -18,6 +19,7 @@
   <div class="input">
     <app-input-text
       label="descrição"
+      id="productDescription"
       placeholder="Descrição do produto"
       formControlName="description"
       [error]="
@@ -31,6 +33,7 @@
     <app-input-currency
       label="preço de compra"
       placeholder="R$ 0,00"
+      id="productPriceBuy"
       formControlName="price_buy"
       [error]="
         !!form.get('price_buy')?.touched && !!form.get('price_buy')?.invalid
@@ -43,6 +46,7 @@
     <app-input-currency
       label="preço de venda"
       placeholder="R$ 0,00"
+      id="productPriceSell"
       formControlName="price_sale"
       [error]="
         !!form.get('price_sale')?.touched && !!form.get('price_sale')?.invalid

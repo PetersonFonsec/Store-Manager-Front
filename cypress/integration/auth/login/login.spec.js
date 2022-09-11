@@ -34,7 +34,16 @@ describe('Login - screen', () => {
 
   it('Should enable submit when form is valid', async () => {
     cy.get('#email').type('email@valid.com');
-    cy.get('#password').type('password123');
+    cy.get('#password').type('Password123!');
     cy.get('.button').should('be.enabled');
+  });
+
+  it('Should redirect to dashboard page', async () => {
+    cy.get('#name').type('peterson');
+    cy.get('#email').type('email@valid.com');
+    cy.get('#password').type('Password123!');
+    cy.get('#confirm_password').type('Password123!');
+    cy.get('.button').click();
+    cy.title().should('be.equal', 'Storage Manager | Dashboard');
   });
 });

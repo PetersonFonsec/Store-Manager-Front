@@ -1,14 +1,18 @@
 <form [formGroup]="form" (ngSubmit)="submit()" class="form content">
-  <app-input-text
-    class="input"
-    label="Search"
-    formControlName="search"
-    [error]="!!form.get('search')?.touched && !!form.get('search')?.invalid"
-  ></app-input-text>
+  <div class="input">
+    <app-input-text
+      label="Search"
+      id="input-search"
+      formControlName="search"
+      [error]="!!form.get('search')?.touched && !!form.get('search')?.invalid"
+    ></app-input-text>
 
-  <app-error-message [control]="form.get('search')"></app-error-message>
+    <app-error-message [control]="form.get('search')"></app-error-message>
+  </div>
 
-  <app-button [disabled]="form.invalid" type="submit">Search</app-button>
+  <app-button id="button-search" [disabled]="form.invalid" type="submit"
+    >Search</app-button
+  >
   <app-button color="red" (click)="createClick()" type="button">
     Criar
   </app-button>
