@@ -6,7 +6,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { ErrorInterceptor } from './shared/interceptors/error/error.interceptor';
-import { LoggedGuard } from './shared/guards/logged.guard';
+import { LoggedGuard } from './shared/guards/logged/logged.guard';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
