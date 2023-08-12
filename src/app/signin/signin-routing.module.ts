@@ -49,6 +49,16 @@ const routes: Routes = [
           title: 'Fornecedores',
         },
       },
+      {
+        path: 'Usuario',
+        loadChildren: () =>
+          import('./pages/user/user.module').then(
+            (m) => m.UserModule,
+          ),
+        data: {
+          title: 'Perfil do Usuario',
+        },
+      },
     ],
   },
 ];
