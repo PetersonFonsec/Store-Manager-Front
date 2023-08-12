@@ -1,8 +1,8 @@
+import { IUser } from 'src/app/signin/pages/user/interfaces/user.model';
 import { ResponseError } from '../../interfaces/response-error';
 
 export interface IAuthResponse extends ResponseError {
-  name: string;
-  email: string;
+  user: IUser;
   access_token: string;
 }
 
