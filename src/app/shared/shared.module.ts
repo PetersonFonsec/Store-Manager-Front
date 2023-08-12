@@ -27,6 +27,8 @@ import { FormSearchComponent } from './components/forms/form-search/form-search.
 import { InputPhotoComponent } from './components/inputs/input-photo/input-photo.component';
 import { InputCurrencyComponent } from './components/inputs/input-currency/input-currency.component';
 import { NgxCurrencyModule } from 'ngx-currency';
+import { StoreModule } from '@ngrx/store';
+import { userReducer } from './stores/reducers/user.reducers';
 
 export const options: null | Partial<IConfig> | (() => Partial<IConfig>) = null;
 
@@ -61,6 +63,7 @@ export const options: null | Partial<IConfig> | (() => Partial<IConfig>) = null;
     ReactiveFormsModule,
     NgxMaskModule.forRoot(),
     NgxCurrencyModule,
+    StoreModule.forFeature('user', userReducer)
   ],
   exports: [
     AsideComponent,
