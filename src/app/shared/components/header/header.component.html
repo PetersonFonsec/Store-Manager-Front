@@ -1,11 +1,10 @@
 <header class="header">
   <div class="header_avatar">
-    Jones Ferdinand
+    {{name}}
 
     <app-avatar
-      name="Jones Ferdinand"
-      prefix="providers_photo"
-      avatar="https://dummyimage.com/60x60/000/fff"
+      [name]="name"
+      [avatar]="avatar"
     ></app-avatar>
   </div>
 </header>

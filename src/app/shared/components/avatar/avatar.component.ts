@@ -10,5 +10,4 @@ export class AvatarComponent {
   urlBase = environment.urlApi;
   @Input() avatar = '';
   @Input() name = '';
-  @Input() prefix = '';
 }
