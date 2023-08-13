@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   app_name: 'Storage Manager',
-  token: '@STORE_MANAGER',
+  token: '@STORE_MANAGER/TOKEN',
+  user: '@STORE_MANAGER/USER',
   urlApi: 'http://localhost:3000/',
 };
 
