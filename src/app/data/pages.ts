@@ -31,4 +31,9 @@ export const pages: PageLink[] = [
     content: 'Sales',
     icon: faPeopleCarry,
   },
+  {
+    link: 'usuario',
+    content: 'user',
+    icon: faPeopleCarry,
+  },
 ];

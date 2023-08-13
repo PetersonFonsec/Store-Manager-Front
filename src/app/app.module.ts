@@ -9,6 +9,10 @@ import { ErrorInterceptor } from './shared/interceptors/error/error.interceptor'
 import { LoggedGuard } from './shared/guards/logged/logged.guard';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+import { userReducer, userReducers } from './shared/stores/reducers/user.reducers';
 
 export const ERROR_INTERCEPTOR_PROVIDER = {
   provide: HTTP_INTERCEPTORS,
@@ -23,6 +27,8 @@ export const ERROR_INTERCEPTOR_PROVIDER = {
     FontAwesomeModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    StoreModule.forRoot({ user: userReducer}),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
   ],
   providers: [LoggedGuard, ERROR_INTERCEPTOR_PROVIDER],
   bootstrap: [AppComponent],
