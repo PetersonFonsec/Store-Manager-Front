@@ -2,12 +2,13 @@
   <h3 class="title">Formulário para criar uma nova venda</h3>
 
   <div class="input">
-    <app-input-text
+    <app-select
       label="Produto"
       placeholder="Nome do produto"
+      [options]="products$ | async | selectOptions:'name':'_id'"
       formControlName="product"
       [error]="!!form.get('product')?.touched && !!form.get('product')?.invalid"
-    ></app-input-text>
+    ></app-select>
     <app-error-message [control]="form.get('product')"> </app-error-message>
   </div>
 

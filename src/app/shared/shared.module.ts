@@ -6,6 +6,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { IConfig, NgxMaskModule } from 'ngx-mask';
+import { NgxCurrencyModule } from 'ngx-currency';
+import { StoreModule } from '@ngrx/store';
 
 import { AsideComponent } from './components/aside/aside.component';
 import { ButtonComponent } from './components/button/button.component';
@@ -26,13 +28,18 @@ import { GenericItemLoadingComponent } from './components/itens/generic-item-loa
 import { FormSearchComponent } from './components/forms/form-search/form-search.component';
 import { InputPhotoComponent } from './components/inputs/input-photo/input-photo.component';
 import { InputCurrencyComponent } from './components/inputs/input-currency/input-currency.component';
-import { NgxCurrencyModule } from 'ngx-currency';
-import { StoreModule } from '@ngrx/store';
 import { userReducer } from './stores/reducers/user.reducers';
+import { SelectComponent } from './components/select/select.component';
+import { ProductService } from '../signin/pages/products/services/product/product.service';
+import { SelectOptionsPipe } from './pipes/select-options/select-options.pipe';
+import { SelectOptionsFilterPipe } from './pipes/select-options-filter/select-options-filter.pipe';
 
 export const options: null | Partial<IConfig> | (() => Partial<IConfig>) = null;
 
 @NgModule({
+  providers: [
+    ProductService
+  ],
   declarations: [
     AsideComponent,
     ButtonComponent,
@@ -53,6 +60,9 @@ export const options: null | Partial<IConfig> | (() => Partial<IConfig>) = null;
     FormSearchComponent,
     InputPhotoComponent,
     InputCurrencyComponent,
+    SelectComponent,
+    SelectOptionsPipe,
+    SelectOptionsFilterPipe,
   ],
   imports: [
     CommonModule,
@@ -85,6 +95,8 @@ export const options: null | Partial<IConfig> | (() => Partial<IConfig>) = null;
     FormSearchComponent,
     InputPhotoComponent,
     InputCurrencyComponent,
+    SelectComponent,
+    SelectOptionsPipe,
   ],
 })
 export class SharedModule {}

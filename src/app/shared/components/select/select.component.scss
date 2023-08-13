@@ -1,0 +1,45 @@
+.select {
+  position: relative;
+
+  & ::ng-deep .input-text {
+    input {
+      cursor: pointer;
+    }
+
+    input:focus-visible {
+      outline: none;
+    }
+  }
+
+  &_options:not(.show) {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &_options {
+    border: 1px solid var(--gray);
+    position: absolute;
+    background: var(--light);
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    max-height: 120px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transform: translateY(calc(100% - 4px));
+    z-index: 1;
+
+    &_item {
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+
+    &_item:not(:last-child) {
+      margin-bottom: 14px;
+    }
+
+    &_item:hover {
+      background-color: rgba(55, 81, 255, 0.06);
+    }
+  }
+}
