@@ -50,7 +50,7 @@ const routes: Routes = [
         },
       },
       {
-        path: 'Usuario',
+        path: 'usuario',
         loadChildren: () =>
           import('./pages/user/user.module').then(
             (m) => m.UserModule,

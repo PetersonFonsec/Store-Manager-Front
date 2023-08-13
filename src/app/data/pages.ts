@@ -2,6 +2,8 @@ import {
   faChartBar,
   faBoxOpen,
   faPeopleCarry,
+  faUser,
+  faMoneyBill,
 } from '@fortawesome/free-solid-svg-icons';
 
 export interface PageLink {
@@ -29,11 +31,11 @@ export const pages: PageLink[] = [
   {
     link: 'vendas',
     content: 'Sales',
-    icon: faPeopleCarry,
+    icon: faMoneyBill,
   },
   {
     link: 'usuario',
-    content: 'user',
-    icon: faPeopleCarry,
+    content: 'User',
+    icon: faUser,
   },
 ];

@@ -11,7 +11,6 @@ import { UserService } from './services/dashboard/user.service';
   styleUrls: ['./user.component.scss'],
 })
 export class UserComponent implements OnInit {
-  user$ = this.userService.getAll<ISalle>();
 
   constructor(
     private title: Title,
