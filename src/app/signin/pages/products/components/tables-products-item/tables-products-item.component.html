@@ -19,13 +19,13 @@
 
   <div class="item_cell">
     <div class="item_description">
-      {{ product.price_buy }}
+      {{ product.price_buy | currency:'BRL':true }}
     </div>
   </div>
 
   <div class="item_cell">
     <div class="item_description">
-      {{ product.price_sale }}
+      {{ product.price_sale | currency:'BRL':true }}
     </div>
   </div>
 
