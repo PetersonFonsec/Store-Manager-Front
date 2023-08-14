@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Title } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
+import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 import { scrollToTop } from 'src/app/shared/utils/scroll-to-top';
 import { environment } from 'src/environments/environment';
 import { ModalCreateComponent } from './components/modal-create/modal-create.component';
@@ -15,6 +16,7 @@ import { ProviderService } from './services/providers/provider.service';
 })
 export class ProvidesComponent implements OnInit {
   provider$: Observable<IProvider[]>;
+  optionsIcon = faEllipsisV;
 
   constructor(
     private providerService: ProviderService,

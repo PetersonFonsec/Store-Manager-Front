@@ -111,17 +111,17 @@ th {
   padding: 0 32px 12px;
 }
 
+
+tbody tr:hover {
+  background-color: rgba(55, 81, 255, 0.06);
+}
+
 tr {
   border-bottom: 1px solid #dfe0eb;
   cursor: pointer;
   padding: 24px 32px;
   text-align: center;
   transition: var(--transition);
-
-
-  &:hover {
-    background-color: rgba(55, 81, 255, 0.06);
-  }
 
   app-avatar {
     display: block;
@@ -149,4 +149,12 @@ tr {
 
 .mat-dialog-container {
   overflow: visible !important;
+}
+
+.container_image {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 8px;
 }

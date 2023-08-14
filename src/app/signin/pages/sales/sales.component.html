@@ -4,18 +4,52 @@
 ></app-form-search>
 
 <app-generic-table domain="Sales">
-  <app-tables-sales-header></app-tables-sales-header>
+  <tr>
+    <th>Product</th>
+    <th>Price buy</th>
+    <th>Price sale</th>
+    <th>Date salle</th>
+    <th></th>
+  </tr>
 
-  <ng-container *ngIf="salle$ | async as sales; else loading">
-    <app-tables-sales-item
-      *ngFor="let salle of sales"
-      [salle]="salle"
-    ></app-tables-sales-item>
+  <tbody>
+    <ng-container *ngIf="salle$ | async as sales; else loading">
+      <tr *ngFor="let salle of sales">
+        <td>
+          <div class="container_image">
+            <app-avatar
+              [name]="salle.product.name"
+              [avatar]="salle.product.photo"
+            ></app-avatar>
 
-    <app-generic-item *ngIf="!sales.length">
-      No sales registered
-    </app-generic-item>
-  </ng-container>
+            {{ salle.product.name }}
+          </div>
+        </td>
+
+        <td>
+            {{  salle.product.price_buy | currency:'BRL':'symbol' }}
+        </td>
+
+        <td>
+            {{ salle.product.price_sale | currency:'BRL':'symbol' }}
+        </td>
+
+        <td>
+            {{ salle.createdAt | date:'short'}}
+        </td>
+
+        <td>
+          <button>
+            <fa-icon [icon]="optionsIcon"></fa-icon>
+          </button>
+        </td>
+      </tr>
+
+      <app-generic-item *ngIf="!sales.length">
+        No sales registered
+      </app-generic-item>
+    </ng-container>
+  </tbody>
 
   <ng-template #loading>
     <app-generic-item-loading *ngFor="let i of [1, 2, 3]">

@@ -10,8 +10,6 @@ import { ModalUpdateComponent } from './components/modal-update/modal-update.com
 import { SalleService } from './services/salle/salle.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { TablesSalesHeaderComponent } from './components/tables-sales-header/tables-sales-header.component';
-import { TablesSalesItemComponent } from './components/tables-sales-item/tables-sales-item.component';
 import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
@@ -20,8 +18,6 @@ import { MatDialogModule } from '@angular/material/dialog';
     FormSalesComponent,
     ModalCreateComponent,
     ModalUpdateComponent,
-    TablesSalesHeaderComponent,
-    TablesSalesItemComponent,
   ],
   providers: [SalleService],
   imports: [

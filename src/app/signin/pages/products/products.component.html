@@ -15,43 +15,45 @@
     </tr>
   </thead>
 
-  <ng-container *ngIf="products$ | async as products; else loading">
-    <tr *ngFor="let product of products" role="listitem">
-      <td>
-        <div class="container_image">
-          <app-avatar
-            prefix="products_photo"
-            [name]="product.name"
-            [avatar]="product.photo"
-          ></app-avatar>
+  <tbody>
+    <ng-container *ngIf="products$ | async as products; else loading">
+      <tr *ngFor="let product of products" role="listitem">
+        <td>
+          <div class="container_image">
+            <app-avatar
+              prefix="products_photo"
+              [name]="product.name"
+              [avatar]="product.photo"
+            ></app-avatar>
 
-          {{ product.name }}
-        </div>
-      </td>
+            {{ product.name }}
+          </div>
+        </td>
 
-      <td>
-        {{ product.description }}
-      </td>
+        <td>
+          {{ product.description }}
+        </td>
 
-      <td>
-        {{ product.price_buy | currency:'BRL':'symbol' }}
-      </td>
+        <td>
+          {{ product.price_buy | currency:'BRL':'symbol' }}
+        </td>
 
-      <td>
-        {{ product.price_sale | currency:'BRL':'symbol' }}
-      </td>
+        <td>
+          {{ product.price_sale | currency:'BRL':'symbol' }}
+        </td>
 
-      <td>
-        <button>
-          <fa-icon [icon]="optionsIcon"></fa-icon>
-        </button>
-      </td>
-    </tr>
+        <td>
+          <button>
+            <fa-icon [icon]="optionsIcon"></fa-icon>
+          </button>
+        </td>
+      </tr>
 
-    <app-generic-item *ngIf="!products.length">
-      No products registered
-    </app-generic-item>
-  </ng-container>
+      <app-generic-item *ngIf="!products.length">
+        No products registered
+      </app-generic-item>
+    </ng-container>
+  </tbody>
 
   <ng-template #loading>
     <app-generic-item-loading *ngFor="let i of [1, 2, 3]">
