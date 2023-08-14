@@ -1,23 +1,11 @@
 <div class="table">
   <div class="table_header">
     <h2 class="table_header_title">All {{ domain }}</h2>
-
-    <div class="table_header_filter">
-      <div class="filter">
-        <fa-icon class="icon" [icon]="sortIcon"></fa-icon>
-        Sort
-      </div>
-
-      <div class="filter">
-        <fa-icon class="icon" [icon]="filterIcon"></fa-icon>
-        Filter
-      </div>
-    </div>
   </div>
 
-  <div role="list" class="table_body">
+  <table class="table_body">
     <ng-content></ng-content>
-  </div>
+  </table>
 
   <div class="table_footer">
     <div class="table_footer_per-page">Rows per page: 8</div>

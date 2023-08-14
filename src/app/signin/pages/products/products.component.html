@@ -5,13 +5,48 @@
 ></app-form-search>
 
 <app-generic-table domain="Products">
-  <app-tables-products-header></app-tables-products-header>
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Description</th>
+      <th>Price buy</th>
+      <th>Price sale</th>
+      <th></th>
+    </tr>
+  </thead>
 
   <ng-container *ngIf="products$ | async as products; else loading">
-    <app-tables-products-item
-      *ngFor="let product of products"
-      [product]="product"
-    ></app-tables-products-item>
+    <tr *ngFor="let product of products" role="listitem">
+      <td>
+        <div class="container_image">
+          <app-avatar
+            prefix="products_photo"
+            [name]="product.name"
+            [avatar]="product.photo"
+          ></app-avatar>
+
+          {{ product.name }}
+        </div>
+      </td>
+
+      <td>
+        {{ product.description }}
+      </td>
+
+      <td>
+        {{ product.price_buy | currency:'BRL':'symbol' }}
+      </td>
+
+      <td>
+        {{ product.price_sale | currency:'BRL':'symbol' }}
+      </td>
+
+      <td>
+        <button>
+          <fa-icon [icon]="optionsIcon"></fa-icon>
+        </button>
+      </td>
+    </tr>
 
     <app-generic-item *ngIf="!products.length">
       No products registered

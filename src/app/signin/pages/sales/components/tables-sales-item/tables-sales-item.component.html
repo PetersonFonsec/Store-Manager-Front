@@ -12,13 +12,13 @@
 
   <div class="item_cell">
     <div class="item_description">
-      {{  salle.product.price_buy | currency:'BRL':true }}
+      {{  salle.product.price_buy | currency:'BRL':'symbol' }}
     </div>
   </div>
 
   <div class="item_cell">
     <div class="item_description">
-      {{ salle.product.price_sale | currency:'BRL':true }}
+      {{ salle.product.price_sale | currency:'BRL':'symbol' }}
     </div>
   </div>
 

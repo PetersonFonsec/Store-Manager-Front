@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Title } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
+import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 import { scrollToTop } from 'src/app/shared/utils/scroll-to-top';
 import { environment } from 'src/environments/environment';
 import { ModalCreateComponent } from './components/modal-create/modal-create.component';
@@ -15,6 +16,7 @@ import { ProductService } from './services/product/product.service';
 })
 export class ProductsComponent implements OnInit {
   products$: Observable<IProduct[]>;
+  optionsIcon = faEllipsisV;
 
   constructor(
     private productService: ProductService,

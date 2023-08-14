@@ -101,37 +101,31 @@ h6 {
   width: 100%;
 }
 
-.item {
+th {
+  border-bottom: 1px solid #dfe0eb;
+  color: #9fa2b4;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.2px;
+  line-height: 18px;
+  padding: 0 32px 12px;
+}
+
+tr {
   border-bottom: 1px solid #dfe0eb;
   cursor: pointer;
-  display: flex;
-  justify-content: center;
   padding: 24px 32px;
   text-align: center;
   transition: var(--transition);
+
 
   &:hover {
     background-color: rgba(55, 81, 255, 0.06);
   }
 
-  &_cell {
-    align-items: center;
-    display: flex;
-    flex: 1;
-
-    &.small {
-      max-width: 10px;
-    }
-
-    &.lg {
-      flex: 1 20%;
-      justify-content: flex-start;
-
-      app-avatar {
-        display: block;
-        margin-right: 24px;
-      }
-    }
+  app-avatar {
+    display: block;
+    margin-right: 24px;
   }
 
   &_description {
