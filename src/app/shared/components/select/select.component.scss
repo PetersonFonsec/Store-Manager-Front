@@ -35,7 +35,7 @@
     }
 
     &_item:not(:last-child) {
-      margin-bottom: 14px;
+      margin-bottom: var(--space-sm);
     }
 
     &_item:hover {

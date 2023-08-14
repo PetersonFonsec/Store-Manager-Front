@@ -1,4 +1,6 @@
 img {
   border-radius: 100%;
   display: block;
+  border: var(--border);
+  padding: 2px;
 }

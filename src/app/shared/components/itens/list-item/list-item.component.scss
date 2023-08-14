@@ -1,5 +1,5 @@
 .item {
-  border-bottom: 1px solid #dfe0eb;
+  border-bottom: var(--text);
   display: flex;
   justify-content: flex-start;
   padding: 20px 32px;

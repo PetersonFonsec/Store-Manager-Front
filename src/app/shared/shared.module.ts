@@ -16,7 +16,6 @@ import { InputPasswordComponent } from './components/inputs/input-password/input
 import { HeaderComponent } from './components/header/header.component';
 import { AvatarComponent } from './components/avatar/avatar.component';
 import { BadgeComponent } from './components/badge/badge.component';
-import { ContainerComponent } from './components/container/container.component';
 import { ListComponent } from './components/list/list.component';
 import { ListItemComponent } from './components/itens/list-item/list-item.component';
 import { ErrorMessagePipe } from './pipes/error-message/error-message.pipe';
@@ -48,7 +47,6 @@ export const options: null | Partial<IConfig> | (() => Partial<IConfig>) = null;
     HeaderComponent,
     AvatarComponent,
     BadgeComponent,
-    ContainerComponent,
     ListComponent,
     ListItemComponent,
     ErrorMessagePipe,
@@ -83,7 +81,6 @@ export const options: null | Partial<IConfig> | (() => Partial<IConfig>) = null;
     HeaderComponent,
     AvatarComponent,
     BadgeComponent,
-    ContainerComponent,
     ListComponent,
     ListItemComponent,
     ErrorMessagePipe,

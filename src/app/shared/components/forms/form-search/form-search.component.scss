@@ -11,12 +11,12 @@
 
   .input {
     width: 100%;
-    margin-bottom: 24px;
+    margin-bottom: var(--space-md);
 
     @media (min-width: 768px) {
       flex: 1;
       margin-bottom: 0;
-      margin-right: 24px;
+      margin-right: var(--space-md);
     }
   }
 
@@ -29,7 +29,7 @@
   }
 
   app-button:not(:last-child) {
-    margin-right: 14px;
+    margin-right: var(--space-sm);
   }
 
   app-error-message {

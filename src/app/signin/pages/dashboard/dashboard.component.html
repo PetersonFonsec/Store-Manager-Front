@@ -1,26 +1,26 @@
 <div class="dashboard" *ngIf="dashboard$ | async as dashboard">
   <div class="card">
-    <app-container>
+    <div class="container">
       Produtos Cadastrados
       <strong>{{ dashboard.products.register }}</strong>
-    </app-container>
+    </div>
   </div>
 
   <div class="card">
-    <app-container>
+    <div class="container">
       Fornecedores Cadastrados
       <strong>{{ dashboard.providers }}</strong>
-    </app-container>
+    </div>
   </div>
 
   <div class="card collumn-medium">
-    <app-container>
+    <div class="container">
       Vendas no ultimo mês
       <strong> {{ dashboard.sale.length }} </strong>
-    </app-container>
+    </div>
   </div>
 
-  <div class="collumn-medium">
+  <div class="container collumn-medium">
     <app-list title="Produtos mais vendidos no ultimo mês">
       <a header-aside routerLink="../vendas"> Ver todas as vendas </a>
       <app-list-item>
@@ -37,7 +37,7 @@
     </app-list>
   </div>
 
-  <div class="collumn-medium">
+  <div class="container collumn-medium">
     <app-list title="Produtos menos vendidos no ultimo mês">
       <a header-aside routerLink="../vendas"> Ver todas as vendas </a>
       <app-list-item>

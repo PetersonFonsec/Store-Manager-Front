@@ -18,9 +18,10 @@ $front-theme: mat.define-light-theme(
 @include mat.all-component-themes($front-theme);
 
 :root {
+  //colors
   --text: #252733;
+  --gray: #dfe0eb;
   --text-light: #4b506d;
-  --font-family: Mulish;
   --primary: #3751ff;
   --light: #fcfdfe;
   --white: #fff;
@@ -28,14 +29,27 @@ $front-theme: mat.define-light-theme(
   --red: #f12b2c;
   --red-medium: #ff222291;
   --yellow: #fec400;
-  --gray: #f0f1f7;
   --gray-dark: #9fa2b4;
   --background: #363740;
   --background-light: #f7f8fc;
   --background-very-light: #dde2ff;
+
   --transition: 0.2s ease-in-out all;
 
+  --font-family: Mulish;
+
+  --border: 1px solid var(--gray);
+
+  --space-xxs: 4px;
   --space-xs: 6px;
+  --space-sm: 14px;
+  --space-md: 24px;
+  --space-xmd: 32px;
+  --space-lg: 40px;
+
+  --mobile: 360px;
+  --tablet: 768px;
+  --desktop: 1024px;
 }
 
 * {
@@ -63,6 +77,15 @@ a {
   &:hover {
     text-decoration: underline;
   }
+}
+
+table {
+  border-collapse: collapse;
+
+  tr:nth-child(even) {
+    background-color: var(--light);
+    background-color: rgba(55, 81, 255, 0.06);
+}
 }
 
 ul,
@@ -94,7 +117,7 @@ h6 {
 
 .content {
   background: var(--white);
-  border: 1px solid #dfe0eb;
+  border: var(--border);
   border-radius: 8px;
   box-sizing: border-box;
   padding: 24px 32px;
@@ -102,7 +125,7 @@ h6 {
 }
 
 th {
-  border-bottom: 1px solid #dfe0eb;
+  border-bottom: var(--border);
   color: #9fa2b4;
   font-size: 14px;
   font-weight: bold;
@@ -117,7 +140,6 @@ tbody tr:hover {
 }
 
 tr {
-  border-bottom: 1px solid #dfe0eb;
   cursor: pointer;
   padding: 24px 32px;
   text-align: center;
@@ -125,7 +147,7 @@ tr {
 
   app-avatar {
     display: block;
-    margin-right: 24px;
+    margin-right: var(--space-md);
   }
 
   &_description {
@@ -142,7 +164,7 @@ tr {
       font-weight: normal;
       letter-spacing: 0.1px;
       line-height: 16px;
-      margin-top: 4px;
+      margin-top: var(--space-xxs);
     }
   }
 }
