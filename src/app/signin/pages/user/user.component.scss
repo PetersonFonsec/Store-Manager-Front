@@ -1,5 +1,35 @@
-app-form-search {
-  display: block;
-  margin-bottom: 24px;
+@import '../../../../scss/index.scss';
+
+.user {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  margin: 0 auto;
   width: 100%;
+
+  @media (min-width: $tablet) {
+    flex-direction: row;
+  }
+
+  &_half:not(:last-child) {
+    border-bottom: 1px solid var(--gray);
+
+    @media (min-width: $tablet) {
+      border: none;
+      border-right: 1px solid var(--gray);
+      height: 100%;
+    }
+  }
+
+  &_half {
+    max-width: 350px;
+    padding: 16px;
+    width: 100%;
+
+    @media (min-width: $tablet) {
+      width: 45%;
+    }
+  }
 }

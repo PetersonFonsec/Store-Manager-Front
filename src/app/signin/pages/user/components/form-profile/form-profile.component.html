@@ -1,0 +1,16 @@
+<form class='form-profile' [formGroup]="form" (ngSubmit)="_submit()">
+  <h1 class="user_title">
+    <small>Nome</small>
+    Peterson Fonseca Simião
+  </h1>
+
+  <app-input-photo></app-input-photo>
+
+  <app-button
+    [disabled]="form.invalid"
+    type="submit"
+    color="blue"
+  >
+    Atualizar
+  </app-button>
+</form>

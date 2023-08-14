@@ -1,0 +1,30 @@
+.user_title {
+  color: var(--text);
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.4px;
+
+  small {
+    display: block;
+    color: var(--gray-dark);
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 8px;
+  }
+}
+
+.form-profile {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  app-button {
+    width: 100%;
+    margin-top: 24px;
+  }
+}

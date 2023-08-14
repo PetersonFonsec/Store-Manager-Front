@@ -1,4 +1,4 @@
-<div class="dashboard">
-  <div class="card">
-  </div>
+<div class="user content" *ngIf="user$ | async as user">
+  <app-form-profile class="user_half"></app-form-profile>
+  <app-form-password class="user_half"></app-form-password>
 </div>
