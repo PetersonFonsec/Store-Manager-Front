@@ -1,4 +1,5 @@
-<div class="user content" *ngIf="user$ | async as user">
-  <app-form-profile class="user_half"></app-form-profile>
+<div class="user content">
+  <app-form-profile class="user_half" [loading]="loading" (submit)="updateProfile($event)">
+  </app-form-profile>
   <app-form-password class="user_half"></app-form-password>
 </div>

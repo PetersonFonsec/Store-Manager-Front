@@ -5,3 +5,8 @@ export const enterApplication = createAction(
  'User enter in application',
  props<UserState>()
 )
+
+export const updateProfile = createAction(
+  'User update profile',
+  props<UserState>()
+ )

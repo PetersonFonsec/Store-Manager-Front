@@ -1,5 +1,7 @@
 <div class="input-photo">
   <img *ngIf="value.b64" [src]="value.b64" class="input-photo_photo" />
+  <img *ngIf="initialImage && !inputFile.value" src="{{urlBase}}/{{initialImage}}" class="input-photo_photo" />
+
   <input
     #inputFile
     type="file"

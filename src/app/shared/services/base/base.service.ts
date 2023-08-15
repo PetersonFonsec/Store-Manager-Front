@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class BaseService {
-  private urlApi = environment.urlApi;
+  protected urlApi = environment.urlApi;
 
   constructor(
     @Inject('domain') private domain: string,
@@ -35,7 +35,7 @@ export class BaseService {
   }
 
   update<TUpdate, TParams>(id: string, params: TParams): Observable<TUpdate> {
-    return this.httpClient.post<TUpdate>(`${this.urlApi}/${id}`, params);
+    return this.httpClient.put<TUpdate>(`${this.urlApi}/${id}`, params);
   }
 
   delete<TDelete, TParams>(id: string, params: TParams): Observable<TDelete> {

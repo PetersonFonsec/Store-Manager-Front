@@ -17,4 +17,9 @@ export const userReducer = createReducer(
   on(UserActions.enterApplication, (state, action) => {
     localStorage.setItem(environment.user, JSON.stringify(action));
     return {state, ...action}
-  }));
+  }),
+  on(UserActions.updateProfile, (state, action) => {
+    localStorage.setItem(environment.user, JSON.stringify(action));
+    return {state, ...action}
+  }),
+);

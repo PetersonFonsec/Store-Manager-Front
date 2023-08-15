@@ -1,6 +1,7 @@
 import { Component, forwardRef, Input, OnInit } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons';
+import { environment } from 'src/environments/environment';
 
 export interface InputPhotoValue {
   b64: string;
@@ -21,6 +22,9 @@ export interface InputPhotoValue {
 })
 export class InputPhotoComponent implements OnInit, ControlValueAccessor {
   @Input() id = '';
+  @Input() initialImage = '';
+
+  urlBase = environment.urlApi;
   iconUpload = faCloudUploadAlt;
   val: InputPhotoValue = {
     b64: '',

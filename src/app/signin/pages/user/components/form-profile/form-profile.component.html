@@ -1,14 +1,28 @@
-<form class='form-profile' [formGroup]="form" (ngSubmit)="_submit()">
+<form class='form-profile' [formGroup]="form" (ngSubmit)="_submit($event)">
   <h1 class="user_title">
-    <small>Nome</small>
-    Peterson Fonseca Simião
+    Perfil
   </h1>
 
-  <app-input-photo></app-input-photo>
+  <div class="input">
+    <app-input-text
+      label="Nome"
+      id="name"
+      placeholder="Nome"
+      formControlName="name"
+      [error]="!!form.get('name')?.touched && !!form.get('name')?.invalid"
+    ></app-input-text>
+    <app-error-message [control]="form.get('name')"> </app-error-message>
+  </div>
+
+  <app-input-photo
+    [initialImage]="user.photo"
+    formControlName="photo">
+  </app-input-photo>
 
   <app-button
     [disabled]="form.invalid"
     type="submit"
+    [loading]="loading"
     color="blue"
   >
     Atualizar
