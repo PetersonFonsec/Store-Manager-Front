@@ -7,6 +7,7 @@ import { scrollToTop } from 'src/app/shared/utils/scroll-to-top';
 import { UserService } from './services/dashboard/user.service';
 import { environment } from 'src/environments/environment';
 import { InputPhotoValue } from 'src/app/shared/components/inputs/input-photo/input-photo.component';
+import { IFormPasswordFields } from './components/form-password/form-password.component';
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -38,6 +39,23 @@ export class UserComponent implements OnInit {
 
   ngOnDestroy(): void {
     this.subscription?.unsubscribe();
+  }
+
+  updatePassword(user: IFormPasswordFields): void {
+    const { current_password, new_password: password, confirm_password, email} = user;
+    this.loading = true;
+
+    this.subscription = this.userService.updatePassword(user._id, {
+      current_password, password, confirm_password, email
+    }).subscribe({
+      next: () => {
+        this.loading = false;
+      },
+      error: ({ message }) => {
+        this.errorMessage = message;
+        this.loading = false;
+      },
+    });
   }
 
   updateProfile(user: UserState & {photo: InputPhotoValue}): void {
