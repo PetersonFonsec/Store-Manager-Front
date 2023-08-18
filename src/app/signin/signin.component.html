@@ -3,9 +3,16 @@
 
   <div class="container">
     <div *ngIf="user$ | async as user" class="container_header">
-      <app-header [name]="user.name" [avatar]="user.photo"></app-header>
+      <app-header [name]="user.name" [avatar]="user.photo">
+      </app-header>
     </div>
+
 
     <router-outlet></router-outlet>
   </div>
+
+  <ng-container *ngIf="message$ | async as message">
+    <app-toast (close)="hideMessage()" [message]="message">
+    </app-toast>
+  </ng-container>
 </main>

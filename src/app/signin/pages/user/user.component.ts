@@ -8,6 +8,9 @@ import { UserService } from './services/dashboard/user.service';
 import { environment } from 'src/environments/environment';
 import { InputPhotoValue } from 'src/app/shared/components/inputs/input-photo/input-photo.component';
 import { IFormPasswordFields } from './components/form-password/form-password.component';
+import { Store } from '@ngrx/store';
+import { showErrorMessage, showSuccessMessage } from 'src/app/shared/stores/actions/message.actions';
+
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -17,10 +20,12 @@ export class UserComponent implements OnInit {
   subscription: Subscription | undefined;
   errorMessage = '';
   loading = false;
+  loadingPassword = false;
 
   constructor(
     private title: Title,
     private userService: UserService,
+    private store: Store,
   ) {}
 
   ngOnInit(): void {
@@ -43,17 +48,26 @@ export class UserComponent implements OnInit {
 
   updatePassword(user: IFormPasswordFields): void {
     const { current_password, new_password: password, confirm_password, email} = user;
-    this.loading = true;
+    this.loadingPassword = true;
 
     this.subscription = this.userService.updatePassword(user._id, {
       current_password, password, confirm_password, email
     }).subscribe({
       next: () => {
-        this.loading = false;
+        this.loadingPassword = false;
+
+        this.store.dispatch(showSuccessMessage({
+          title: 'Pefil atualizado com sucesso !!',
+          description: 'Seu perfil esta atualizado com os novos dados.'
+        }));
       },
-      error: ({ message }) => {
-        this.errorMessage = message;
-        this.loading = false;
+      error: ({ message, error }) => {
+        this.loadingPassword = false;
+
+        this.store.dispatch(showErrorMessage({
+          title: error,
+          description: message
+        }));
       },
     });
   }
@@ -65,10 +79,20 @@ export class UserComponent implements OnInit {
     this.subscription = this.userService.update(user._id, userUpdate).subscribe({
       next: () => {
         this.loading = false;
+
+        this.store.dispatch(showSuccessMessage({
+          title: 'Senha atualizada com sucesso !!',
+          description: 'No proximo login utilize a nova senha.'
+        }));
       },
-      error: ({ message }) => {
+      error: ({ message, error}) => {
         this.errorMessage = message;
         this.loading = false;
+
+        this.store.dispatch(showErrorMessage({
+          title: error,
+          description: message
+        }));
       },
     });
   }
