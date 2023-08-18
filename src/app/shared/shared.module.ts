@@ -32,6 +32,8 @@ import { SelectComponent } from './components/select/select.component';
 import { ProductService } from '../signin/pages/products/services/product/product.service';
 import { SelectOptionsPipe } from './pipes/select-options/select-options.pipe';
 import { SelectOptionsFilterPipe } from './pipes/select-options-filter/select-options-filter.pipe';
+import { ToastComponent } from './components/toast/toast.component';
+import { messageReducer } from './stores/reducers/message.reducers';
 
 export const options: null | Partial<IConfig> | (() => Partial<IConfig>) = null;
 
@@ -61,6 +63,7 @@ export const options: null | Partial<IConfig> | (() => Partial<IConfig>) = null;
     SelectComponent,
     SelectOptionsPipe,
     SelectOptionsFilterPipe,
+    ToastComponent,
   ],
   imports: [
     CommonModule,
@@ -71,7 +74,8 @@ export const options: null | Partial<IConfig> | (() => Partial<IConfig>) = null;
     ReactiveFormsModule,
     NgxMaskModule.forRoot(),
     NgxCurrencyModule,
-    StoreModule.forFeature('user', userReducer)
+    StoreModule.forFeature('user', userReducer),
+    StoreModule.forFeature('message', messageReducer)
   ],
   exports: [
     AsideComponent,
@@ -94,6 +98,7 @@ export const options: null | Partial<IConfig> | (() => Partial<IConfig>) = null;
     InputCurrencyComponent,
     SelectComponent,
     SelectOptionsPipe,
+    ToastComponent
   ],
 })
 export class SharedModule {}
