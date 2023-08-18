@@ -1,0 +1,55 @@
+.toast {
+  display: flex;
+  position: fixed;
+  overflow: hidden;
+  padding: 8px;
+  padding-left: 36px;
+  font-size: 16px;
+  bottom: 24px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  color: #E2E8F0;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  transition: var(--transition);
+  transform: translateY(calc(100% + 44px ));
+
+  &.show {
+    transform: translateY(0);
+  }
+
+  &_icon {
+    font-size: 20px;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+  }
+
+  &_title {
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+
+  &_close {
+    color: var(--white);
+    cursor: pointer;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+  }
+
+  &.success {
+    background:var(--success);
+  }
+
+  &.error {
+    background: var(--error);
+  }
+
+  &.info {
+    background: var(--alert-bg);
+  }
+}
