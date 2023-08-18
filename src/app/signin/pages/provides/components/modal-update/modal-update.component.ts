@@ -3,6 +3,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { Subscription } from 'rxjs';
 import { ProviderService } from '../../services/providers/provider.service';
 import { IProvidesCreate } from '../form-provides/form-provides.component';
+import { showErrorMessage, showSuccessMessage } from 'src/app/shared/stores/actions/message.actions';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-modal-update',
@@ -14,8 +16,9 @@ export class ModalUpdateComponent implements OnDestroy {
   loading = false;
 
   constructor(
-    private providerService: ProviderService,
+    private store: Store,
     private dialog: MatDialog,
+    private providerService: ProviderService,
   ) {}
 
   createProvider(provider: IProvidesCreate): void {
@@ -25,9 +28,19 @@ export class ModalUpdateComponent implements OnDestroy {
       next: () => {
         this.dialog.closeAll();
         this.loading = false;
+
+        this.store.dispatch(showSuccessMessage({
+          title: 'Fornecedor atualizado com sucesso !!',
+          description: 'O fornecedor deve estar atualizado na lista.'
+        }));
       },
-      error: () => {
+      error: ({ message, error}) => {
         this.loading = false;
+
+        this.store.dispatch(showErrorMessage({
+          title: error,
+          description: message
+        }));
       },
     });
   }

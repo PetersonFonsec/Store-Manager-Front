@@ -3,6 +3,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { Subscription } from 'rxjs';
 import { ProviderService } from '../../services/providers/provider.service';
 import { IProvidesCreate } from '../form-provides/form-provides.component';
+import { showErrorMessage, showSuccessMessage } from 'src/app/shared/stores/actions/message.actions';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-modal-create',
@@ -15,8 +17,9 @@ export class ModalCreateComponent implements OnDestroy {
   errorMessage = '';
 
   constructor(
-    private providerService: ProviderService,
+    private store: Store,
     private dialog: MatDialog,
+    private providerService: ProviderService,
   ) {}
 
   createProvider(provider: IProvidesCreate): void {
@@ -29,10 +32,19 @@ export class ModalCreateComponent implements OnDestroy {
       next: () => {
         this.dialog.closeAll();
         this.loading = false;
+
+        this.store.dispatch(showSuccessMessage({
+          title: 'Fornecedor criado com sucesso !!',
+          description: 'O novo fornecedor deve estar na lista.'
+        }));
       },
-      error: ({ message }) => {
-        this.errorMessage = message;
+      error: ({ message, error }) => {
         this.loading = false;
+
+        this.store.dispatch(showErrorMessage({
+          title: error,
+          description: message
+        }));
       },
     });
   }

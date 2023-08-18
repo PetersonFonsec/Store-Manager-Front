@@ -3,6 +3,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { Subscription } from 'rxjs';
 import { IProductCreate } from '../../interfaces/products';
 import { ProductService } from '../../services/product/product.service';
+import { showErrorMessage, showSuccessMessage } from 'src/app/shared/stores/actions/message.actions';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-modal-create',
@@ -15,8 +17,9 @@ export class ModalCreateComponent implements OnDestroy {
   errorMessage = '';
 
   constructor(
-    private productService: ProductService,
+    private store: Store,
     private dialog: MatDialog,
+    private productService: ProductService,
   ) {}
 
   createProduct(product: IProductCreate): void {
@@ -29,10 +32,20 @@ export class ModalCreateComponent implements OnDestroy {
       next: () => {
         this.dialog.closeAll();
         this.loading = false;
+
+        this.store.dispatch(showSuccessMessage({
+          title: 'Produto criado com sucesso !!',
+          description: 'O produto deve estar na lista.'
+        }));
       },
-      error: ({ message }) => {
+      error: ({ message, error }) => {
         this.errorMessage = message;
         this.loading = false;
+
+        this.store.dispatch(showErrorMessage({
+          title: error,
+          description: message
+        }));
       },
     });
   }

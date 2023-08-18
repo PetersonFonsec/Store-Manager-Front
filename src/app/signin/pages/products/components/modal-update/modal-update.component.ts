@@ -3,6 +3,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { Subscription } from 'rxjs';
 import { IProductCreate } from '../../interfaces/products';
 import { ProductService } from '../../services/product/product.service';
+import { Store } from '@ngrx/store';
+import { showErrorMessage, showSuccessMessage } from 'src/app/shared/stores/actions/message.actions';
 
 @Component({
   selector: 'app-modal-update',
@@ -14,8 +16,9 @@ export class ModalUpdateComponent implements OnDestroy {
   loading = false;
 
   constructor(
-    private productService: ProductService,
+    private store: Store,
     private dialog: MatDialog,
+    private productService: ProductService,
   ) {}
 
   updateProduct(product: IProductCreate): void {
@@ -24,9 +27,19 @@ export class ModalUpdateComponent implements OnDestroy {
       next: () => {
         this.dialog.closeAll();
         this.loading = false;
+
+        this.store.dispatch(showSuccessMessage({
+          title: 'Produto atualizado com sucesso !!',
+          description: 'O produto deve estar atualizado na lista.'
+        }));
       },
-      error: () => {
+      error: ({ message, error }) => {
         this.loading = false;
+
+        this.store.dispatch(showErrorMessage({
+          title: error,
+          description: message
+        }));
       },
     });
   }
