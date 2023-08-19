@@ -43,9 +43,9 @@
         </td>
 
         <td>
-          <button>
+          <app-dropdown [itens]="dropdown" (selected)="action($event, product)">
             <fa-icon [icon]="optionsIcon"></fa-icon>
-          </button>
+          </app-dropdown>
         </td>
       </tr>
 

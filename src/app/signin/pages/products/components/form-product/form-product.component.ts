@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import { IProductCreate } from '../../interfaces/products';
+import { IProduct, IProductCreate } from '../../interfaces/products';
 
 @Component({
   selector: 'app-form-product',
@@ -10,6 +10,7 @@ import { IProductCreate } from '../../interfaces/products';
 })
 export class FormProductComponent implements OnInit {
   @Output() create = new EventEmitter<IProductCreate>();
+  @Input() product: IProduct | null = null;
   @Input() loading = false;
   iconClose = faTimes;
   form!: FormGroup;
@@ -17,12 +18,29 @@ export class FormProductComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
+    this.createForm();
+    this.setProduct();
+  }
+
+  setProduct() {
+    if(!this.product) return;
+
+    this.form.setValue({
+      description: this.product.description,
+      price_sale: this.product.price_sale,
+      price_buy: this.product.price_buy,
+      photo: this.product.photo,
+      name: this.product.name,
+    })
+  }
+
+  createForm() {
     this.form = this.formBuilder.group({
       description: [null, Validators.required],
       price_sale: [null, Validators.required],
       price_buy: [null, Validators.required],
-      photo: [null],
       name: [null, Validators.required],
+      photo: [null],
     });
   }
 

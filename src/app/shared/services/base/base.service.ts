@@ -38,7 +38,7 @@ export class BaseService {
     return this.httpClient.put<TUpdate>(`${this.urlApi}/${id}`, params);
   }
 
-  delete<TDelete, TParams>(id: string, params: TParams): Observable<TDelete> {
-    return this.httpClient.delete<TDelete>(`${this.urlApi}/${id}`, params);
+  delete<TDelete, TParams>(id: string): Observable<TDelete> {
+    return this.httpClient.delete<TDelete>(`${this.urlApi}/${id}`);
   }
 }

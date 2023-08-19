@@ -34,6 +34,8 @@ import { SelectOptionsPipe } from './pipes/select-options/select-options.pipe';
 import { SelectOptionsFilterPipe } from './pipes/select-options-filter/select-options-filter.pipe';
 import { ToastComponent } from './components/toast/toast.component';
 import { messageReducer } from './stores/reducers/message.reducers';
+import { DropdownComponent } from './components/dropdown/dropdown.component';
+import { ConfirmModalComponent } from './components/modals/confirm-modal/confirm-modal.component';
 
 export const options: null | Partial<IConfig> | (() => Partial<IConfig>) = null;
 
@@ -64,6 +66,8 @@ export const options: null | Partial<IConfig> | (() => Partial<IConfig>) = null;
     SelectOptionsPipe,
     SelectOptionsFilterPipe,
     ToastComponent,
+    DropdownComponent,
+    ConfirmModalComponent,
   ],
   imports: [
     CommonModule,
@@ -98,7 +102,9 @@ export const options: null | Partial<IConfig> | (() => Partial<IConfig>) = null;
     InputCurrencyComponent,
     SelectComponent,
     SelectOptionsPipe,
-    ToastComponent
+    ToastComponent,
+    DropdownComponent,
+    ConfirmModalComponent
   ],
 })
 export class SharedModule {}

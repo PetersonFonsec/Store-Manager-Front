@@ -13,8 +13,8 @@ import { Store } from '@ngrx/store';
 })
 export class ModalCreateComponent implements OnDestroy {
   subscription: Subscription | undefined;
-  loading = false;
   errorMessage = '';
+  loading = false;
 
   constructor(
     private store: Store,
