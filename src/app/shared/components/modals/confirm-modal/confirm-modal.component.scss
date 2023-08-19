@@ -1,0 +1,41 @@
+.confirm {
+  position: relative;
+  color: var(--text);
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 24px;
+  letter-spacing: 0.4px;
+  max-width: 400px;
+  text-align: center;
+
+  &_footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+
+    app-button {
+      width: 50%;
+    }
+
+    app-button:not(:last-child) {
+      margin-right: 24px;
+    }
+  }
+
+  .closeButton {
+    align-items: center;
+    background-color: var(--background);
+    border-radius: 100%;
+    color: var(--white);
+    display: flex;
+    font-size: 12px;
+    height: 24px;
+    justify-content: center;
+    position: absolute;
+    right: -24px;
+    padding: 0;
+    transform: translate(50%, -50%);
+    top: -24px;
+    width: 24px;
+  }
+}

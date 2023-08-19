@@ -1,0 +1,19 @@
+<div class="confirm">
+  <div class="confirm_container">
+   <ng-content></ng-content>
+
+    <div class="confirm_footer">
+      <app-button [loading]="loading" (click)="_confirm(false)" color="red">
+        Não
+      </app-button>
+
+      <app-button [loading]="loading"  (click)="_confirm(true)" color="blue">
+        Sim, Tenho certeza
+      </app-button>
+    </div>
+  </div>
+
+  <button mat-dialog-close class="closeButton" type="button">
+    <fa-icon [icon]="iconClose"></fa-icon>
+  </button>
+</div>
