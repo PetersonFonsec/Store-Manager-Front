@@ -1,0 +1,13 @@
+<div class="dropdown">
+  <button (click)="toggleList()" class="dropdown_button">
+    <ng-content></ng-content>
+  </button>
+
+  <ul class="dropdown_list" [ngClass]="{'show': show}">
+    <li *ngFor="let item of itens">
+      <button (click)="_emit(item)">
+        {{item}}
+      </button>
+    </li>
+  </ul>
+</div>

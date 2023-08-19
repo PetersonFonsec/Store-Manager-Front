@@ -1,0 +1,33 @@
+.dropdown {
+  position: relative;
+
+  &_list {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: var(--border);
+    border-radius: 4px;
+    background: var(--white);
+    transition: var(--transition);
+    opacity: 0;
+    pointer-events: none;
+
+    &.show {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    li:not(:last-child) {
+      margin-bottom: 8px;
+    }
+
+    button {
+      cursor: pointer;
+      padding: 4px 16px;
+    }
+
+    button:hover, button:active {
+      background-color: rgba(55, 81, 255, 0.06);
+    }
+  }
+}
