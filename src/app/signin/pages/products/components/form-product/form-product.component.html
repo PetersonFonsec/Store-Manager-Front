@@ -2,7 +2,10 @@
   <h3 class="title">Formulário para criar um novo produto</h3>
 
   <div class="input center">
-    <app-input-photo formControlName="photo"></app-input-photo>
+    <app-input-photo
+      [initialImage]="product?.photo"
+      formControlName="photo">
+    </app-input-photo>
   </div>
 
   <div class="input">

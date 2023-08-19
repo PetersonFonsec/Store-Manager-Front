@@ -22,7 +22,7 @@ export interface InputPhotoValue {
 })
 export class InputPhotoComponent implements OnInit, ControlValueAccessor {
   @Input() id = '';
-  @Input() initialImage = '';
+  @Input() initialImage?: string = '';
 
   urlBase = environment.urlApi;
   iconUpload = faCloudUploadAlt;
