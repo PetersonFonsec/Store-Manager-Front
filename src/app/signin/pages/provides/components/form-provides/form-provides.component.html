@@ -3,10 +3,11 @@
 
   <div class="input center">
     <app-input-photo
-      id="provide-photo"
-      label="photo"
+      [initialImage]="provider?.photo"
       placeholder="photo do fornecedor"
       formControlName="photo"
+      id="provide-photo"
+      label="photo"
     ></app-input-photo>
     <app-error-message [control]="form.get('photo')"> </app-error-message>
   </div>

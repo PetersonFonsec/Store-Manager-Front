@@ -1,4 +1,5 @@
 <app-form-provides
   [loading]="loading"
-  (create)="createProvider($event)"
+  [provider]="provider"
+  (create)="updateProvider($event)"
 ></app-form-provides>

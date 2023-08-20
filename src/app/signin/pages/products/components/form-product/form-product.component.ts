@@ -23,7 +23,7 @@ export class FormProductComponent implements OnInit {
   }
 
   setProduct() {
-    if(!this.product) return;
+    if (!this.product) return;
 
     this.form.setValue({
       description: this.product.description,
@@ -31,7 +31,7 @@ export class FormProductComponent implements OnInit {
       price_buy: this.product.price_buy,
       photo: this.product.photo,
       name: this.product.name,
-    })
+    });
   }
 
   createForm() {
@@ -46,6 +46,9 @@ export class FormProductComponent implements OnInit {
 
   _submit(): void {
     const form = this.form.getRawValue();
+    const updatePhoto = !form.photo.file && this.product?.photo;
+    if (updatePhoto) form.photo = this.product?.photo;
+
     this.create.emit(form);
   }
 }

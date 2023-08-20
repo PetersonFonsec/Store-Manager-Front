@@ -12,6 +12,7 @@ import { ModalUpdateComponent } from './components/modal-update/modal-update.com
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ERROR_INTERCEPTOR_PROVIDER } from 'src/app/app.module';
+import { ModalDeleteComponent } from './components/modal-delete/modal-delete.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ERROR_INTERCEPTOR_PROVIDER } from 'src/app/app.module';
     FormProvidesComponent,
     ModalCreateComponent,
     ModalUpdateComponent,
+    ModalDeleteComponent,
   ],
   imports: [
     CommonModule,

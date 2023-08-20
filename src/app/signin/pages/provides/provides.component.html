@@ -4,48 +4,26 @@
   placeholder="Search by provider name"
 ></app-form-search>
 
-<app-generic-table domain="Provides">
-  <thead>
-    <th>Provider</th>
-    <th>Email</th>
-    <th>Cellphone</th>
-    <th>Representante</th>
-    <th>Action</th>
-  </thead>
-  <tbody>
-    <ng-container *ngIf="provider$ | async as providers; else loading">
-      <tr *ngFor="let provider of providers">
-        <td>
-          <div class="container_image">
-            <app-avatar
-              [name]="provider.name"
-              [avatar]="provider.photo"
-            ></app-avatar>
-            {{ provider.name }}
-          </div>
-        </td>
+<app-generic-table
+  domain="Provides"
+  (action)="action($event)"
+  [itens$]="provider$"
+  [dropdown]="dropdown"
+  [headers]="table_header"
+  empty="Nenhum fornecedor cadastrado"
+>
+  <ng-template let-item>
+    <td>
+      <div class="container_image">
+        <app-avatar [name]="item.name" [avatar]="item.photo"></app-avatar>
+        {{ item.name }}
+      </div>
+    </td>
 
-        <td> {{ provider.email }} </td>
+    <td>{{ item.email }}</td>
 
-        <td> {{ provider.celphone }} </td>
+    <td>{{ item.celphone }}</td>
 
-        <td> {{ provider.representative }} </td>
-
-        <td class="item_cell small">
-          <button>
-            <fa-icon [icon]="optionsIcon"></fa-icon>
-          </button>
-        </td>
-      </tr>
-
-      <app-generic-item *ngIf="!providers.length">
-        No provider registered
-      </app-generic-item>
-    </ng-container>
-
-    <ng-template #loading>
-      <app-generic-item-loading *ngFor="let i of [1, 2, 3]">
-      </app-generic-item-loading>
-    </ng-template>
-  </tbody>
+    <td>{{ item.representative }}</td>
+  </ng-template>
 </app-generic-table>
