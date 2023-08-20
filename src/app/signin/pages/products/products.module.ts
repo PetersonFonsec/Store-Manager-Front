@@ -13,6 +13,7 @@ import { ProductsRoutingModule } from './products-routing.module';
 import { ERROR_INTERCEPTOR_PROVIDER } from 'src/app/app.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ProductsComponent } from './products.component';
+import { TableItemComponent } from './components/table-item/table-item.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ProductsComponent } from './products.component';
     FormProductComponent,
     ModalUpdateComponent,
     ModalDeleteComponent,
+    TableItemComponent,
   ],
   imports: [
     CommonModule,

@@ -2,7 +2,6 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Title } from '@angular/platform-browser';
 import { Observable, Subscription } from 'rxjs';
-import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 import { scrollToTop } from 'src/app/shared/utils/scroll-to-top';
 import { environment } from 'src/environments/environment';
 import { ModalCreateComponent } from './components/modal-create/modal-create.component';
@@ -21,7 +20,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
   dropdown = Object.values(ProductActions);
   subscription: Subscription | undefined;
   products$: Observable<IProduct[]>;
-  optionsIcon = faEllipsisV;
+  table_header = ['Product', 'Description', 'Price buy', 'Price sale'];
 
   constructor(
     private productService: ProductService,
@@ -48,7 +47,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
     this.products$ = this.productService.getBySearch(productName);
   }
 
-  openModal(component: any, data?: IProduct){
+  openModal(component: any, data?: IProduct) {
     this.subscription = this.dialog
       .open(component, { data })
       .afterClosed()
@@ -57,8 +56,8 @@ export class ProductsComponent implements OnInit, OnDestroy {
       });
   }
 
-  action(action: ProductActions, item: IProduct): void {
-    switch(action) {
+  action([action, item]: [ProductActions, IProduct]): void {
+    switch (action) {
       case ProductActions.delete: {
         this.openModal(ModalDeleteComponent, item);
         break;

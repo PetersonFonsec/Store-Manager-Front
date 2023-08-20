@@ -2,61 +2,40 @@
   (createItem)="createItem()"
   (search)="search($event)"
   placeholder="Search the product by name"
-></app-form-search>
+>
+</app-form-search>
 
-<app-generic-table domain="Products">
-  <thead>
-    <tr>
-      <th>Product</th>
-      <th>Description</th>
-      <th>Price buy</th>
-      <th>Price sale</th>
-      <th>Action</th>
-    </tr>
-  </thead>
+<app-generic-table
+  domain="Products"
+  (action)="action($event)"
+  [itens$]="products$"
+  [dropdown]="dropdown"
+  [headers]="table_header"
+  empty="Nenhum produto cadastrado"
+>
+  <ng-template let-item>
+    <td>
+      <div class="container_image">
+        <app-avatar
+          prefix="products_photo"
+          [name]="item.name"
+          [avatar]="item.photo"
+        ></app-avatar>
 
-  <tbody>
-    <ng-container *ngIf="products$ | async as products; else loading">
-      <tr *ngFor="let product of products" role="listitem">
-        <td>
-          <div class="container_image">
-            <app-avatar
-              prefix="products_photo"
-              [name]="product.name"
-              [avatar]="product.photo"
-            ></app-avatar>
+        {{ item.name }}
+      </div>
+    </td>
 
-            {{ product.name }}
-          </div>
-        </td>
+    <td>
+      {{ item.description }}
+    </td>
 
-        <td>
-          {{ product.description }}
-        </td>
+    <td>
+      {{ item.price_buy | currency: 'BRL':'symbol' }}
+    </td>
 
-        <td>
-          {{ product.price_buy | currency:'BRL':'symbol' }}
-        </td>
-
-        <td>
-          {{ product.price_sale | currency:'BRL':'symbol' }}
-        </td>
-
-        <td>
-          <app-dropdown [itens]="dropdown" (selected)="action($event, product)">
-            <fa-icon [icon]="optionsIcon"></fa-icon>
-          </app-dropdown>
-        </td>
-      </tr>
-
-      <app-generic-item *ngIf="!products.length">
-        No products registered
-      </app-generic-item>
-    </ng-container>
-
-    <ng-template #loading>
-      <app-generic-item-loading *ngFor="let i of [1, 2, 3]">
-      </app-generic-item-loading>
-    </ng-template>
-  </tbody>
+    <td>
+      {{ item.price_sale | currency: 'BRL':'symbol' }}
+    </td>
+  </ng-template>
 </app-generic-table>

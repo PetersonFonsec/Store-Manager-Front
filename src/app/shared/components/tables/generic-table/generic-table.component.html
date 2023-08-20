@@ -4,20 +4,50 @@
   </div>
 
   <table class="table_body">
-    <ng-content></ng-content>
+    <thead>
+      <tr>
+        <th *ngFor="let header of headers">{{ header }}</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody *ngIf="itens$ | async as itens; else loading">
+      <tr *ngFor="let item of itens">
+        <ng-template
+          [ngTemplateOutlet]="templateRef"
+          [ngTemplateOutletContext]="{ $implicit: item }"
+        >
+        </ng-template>
+
+        <td>
+          <app-dropdown [itens]="dropdown" (selected)="_action($event, item)">
+            <fa-icon [icon]="optionsIcon"></fa-icon>
+          </app-dropdown>
+        </td>
+      </tr>
+
+      <tr *ngIf="!itens.length">
+        <td [attr.colspan]="headers.length + 1">
+          {{ empty }}
+        </td>
+      </tr>
+    </tbody>
+
+    <ng-template #loading>
+      <tbody>
+        <tr *ngFor="let loader of [1, 2, 3]">
+          <td *ngFor="let td of headers">
+            <div class="loading-bar"></div>
+          </td>
+          <td>
+            <div class="loading-bar"></div>
+          </td>
+        </tr>
+      </tbody>
+    </ng-template>
   </table>
 
   <div class="table_footer">
-    <div class="table_footer_per-page">Rows per page: 8</div>
-
-    <div class="table_footer_pages">
-      1-8 of 1240
-      <button class="table_footer_button">
-        <fa-icon [icon]="prevIcon"></fa-icon>
-      </button>
-      <button class="table_footer_button">
-        <fa-icon [icon]="nextIcon"></fa-icon>
-      </button>
-    </div>
+    <div class="table_footer_per-page">Total de itens:</div>
   </div>
 </div>

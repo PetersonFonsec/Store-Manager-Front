@@ -188,3 +188,49 @@ tr {
 app-user {
   height: 100%;
 }
+
+.loading-bar {
+  background-color: var(--gray-dark);
+  box-shadow: 0 4px 10px 0 rgba(33, 33, 33, 0.15);
+  border-radius: 4px;
+  height: 24px;
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+  width: 150px;
+  margin: 0 auto;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -150px;
+    top: 0;
+    height: 100%;
+    width: 150px;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      #e8e8e8 50%,
+      transparent 100%
+    );
+    animation: load 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
+
+  &.lg {
+    width: 400px;
+  }
+
+  &.sm {
+    width: 60px;
+  }
+}
+
+@keyframes load {
+  from {
+    left: -150px;
+  }
+  to {
+    left: 100%;
+  }
+}

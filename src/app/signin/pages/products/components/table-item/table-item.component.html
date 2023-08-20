@@ -1,0 +1,31 @@
+<tr role="listitem">
+  <td>
+    <div class="container_image">
+      <app-avatar
+        prefix="products_photo"
+        [name]="product.name"
+        [avatar]="product.photo"
+      ></app-avatar>
+
+      {{ product.name }}
+    </div>
+  </td>
+
+  <td>
+    {{ product.description }}
+  </td>
+
+  <td>
+    {{ product.price_buy | currency:'BRL':'symbol' }}
+  </td>
+
+  <td>
+    {{ product.price_sale | currency:'BRL':'symbol' }}
+  </td>
+
+  <td>
+    <app-dropdown [itens]="dropdown" (selected)="_action($event, product)">
+      <fa-icon [icon]="optionsIcon"></fa-icon>
+    </app-dropdown>
+  </td>
+</tr>
