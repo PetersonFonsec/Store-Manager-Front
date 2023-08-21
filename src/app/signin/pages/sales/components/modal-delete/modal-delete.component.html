@@ -1,0 +1,4 @@
+<app-confirm-modal [loading]="loading" (confirm)="deleteProvider($event)">
+  Tem certeza que você quer apagar a venda realizada no dia
+  {{ salle.createdAt | date: 'short' }}
+</app-confirm-modal>

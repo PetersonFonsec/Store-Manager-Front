@@ -11,6 +11,7 @@ import { SalleService } from './services/salle/salle.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ModalDeleteComponent } from './components/modal-delete/modal-delete.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     FormSalesComponent,
     ModalCreateComponent,
     ModalUpdateComponent,
+    ModalDeleteComponent,
   ],
   providers: [SalleService],
   imports: [

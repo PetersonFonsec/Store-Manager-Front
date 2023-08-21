@@ -46,7 +46,7 @@ export class FormProductComponent implements OnInit {
 
   _submit(): void {
     const form = this.form.getRawValue();
-    const updatePhoto = !form.photo.file && this.product?.photo;
+    const updatePhoto = !form.photo?.file && this.product?.photo;
     if (updatePhoto) form.photo = this.product?.photo;
 
     this.create.emit(form);

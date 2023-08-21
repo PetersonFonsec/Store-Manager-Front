@@ -37,13 +37,8 @@ export class ProvidesComponent implements OnInit {
     scrollToTop();
   }
 
-  showModal(): void {
-    this.dialog
-      .open(ModalCreateComponent)
-      .afterClosed()
-      .subscribe(() => {
-        this.provider$ = this.providerService.getAll();
-      });
+  createItem(): void {
+    this.openModal(ModalCreateComponent);
   }
 
   search(providerName: string): void {

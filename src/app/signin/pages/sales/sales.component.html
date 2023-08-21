@@ -1,58 +1,38 @@
 <app-form-search
-  (createItem)="showModal()"
+  (createItem)="createItem()"
   placeholder="Search the salle"
 ></app-form-search>
 
-<app-generic-table domain="Sales">
-  <tr>
-    <th>Product</th>
-    <th>Price buy</th>
-    <th>Price sale</th>
-    <th>Date salle</th>
-    <th>Action</th>
-  </tr>
+<app-generic-table
+  domain="Sales"
+  (action)="action($event)"
+  [itens$]="salle$"
+  [dropdown]="dropdown"
+  [headers]="table_header"
+  empty="Nenhuma venda cadastrada"
+>
+  <ng-template let-item>
+    <td>
+      <div class="container_image">
+        <app-avatar
+          [name]="item.product.name"
+          [avatar]="item.product.photo"
+        ></app-avatar>
 
-  <tbody>
-    <ng-container *ngIf="salle$ | async as sales; else loading">
-      <tr *ngFor="let salle of sales">
-        <td>
-          <div class="container_image">
-            <app-avatar
-              [name]="salle.product.name"
-              [avatar]="salle.product.photo"
-            ></app-avatar>
+        {{ item.product.name }}
+      </div>
+    </td>
 
-            {{ salle.product.name }}
-          </div>
-        </td>
+    <td>
+      {{ item.product.price_buy | currency: 'BRL':'symbol' }}
+    </td>
 
-        <td>
-            {{  salle.product.price_buy | currency:'BRL':'symbol' }}
-        </td>
+    <td>
+      {{ item.product.price_sale | currency: 'BRL':'symbol' }}
+    </td>
 
-        <td>
-            {{ salle.product.price_sale | currency:'BRL':'symbol' }}
-        </td>
-
-        <td>
-            {{ salle.createdAt | date:'short'}}
-        </td>
-
-        <td>
-          <button>
-            <fa-icon [icon]="optionsIcon"></fa-icon>
-          </button>
-        </td>
-      </tr>
-
-      <app-generic-item *ngIf="!sales.length">
-        No sales registered
-      </app-generic-item>
-    </ng-container>
-
-    <ng-template #loading>
-      <app-generic-item-loading *ngFor="let i of [1, 2, 3]">
-      </app-generic-item-loading>
-    </ng-template>
-  </tbody>
+    <td>
+      {{ item.createdAt | date: 'short' }}
+    </td>
+  </ng-template>
 </app-generic-table>
