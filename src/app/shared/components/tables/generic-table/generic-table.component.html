@@ -11,7 +11,7 @@
       </tr>
     </thead>
 
-    <tbody *ngIf="itens$ | async as itens; else loading">
+    <tbody *ngIf="itens; else loading">
       <tr *ngFor="let item of itens">
         <ng-template
           [ngTemplateOutlet]="templateRef"
@@ -27,7 +27,7 @@
       </tr>
 
       <tr *ngIf="!itens.length">
-        <td [attr.colspan]="headers.length + 1">
+        <td [attr.colspan]="headers.length + 1" class="empty">
           {{ empty }}
         </td>
       </tr>
@@ -48,6 +48,8 @@
   </table>
 
   <div class="table_footer">
-    <div class="table_footer_per-page">Total de itens:</div>
+    <div class="table_footer_per-page">
+      Total de itens: {{ itens?.length || 0 }}
+    </div>
   </div>
 </div>

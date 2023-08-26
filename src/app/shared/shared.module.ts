@@ -40,9 +40,7 @@ import { ConfirmModalComponent } from './components/modals/confirm-modal/confirm
 export const options: null | Partial<IConfig> | (() => Partial<IConfig>) = null;
 
 @NgModule({
-  providers: [
-    ProductService
-  ],
+  providers: [ProductService],
   declarations: [
     AsideComponent,
     ButtonComponent,
@@ -79,7 +77,7 @@ export const options: null | Partial<IConfig> | (() => Partial<IConfig>) = null;
     NgxMaskModule.forRoot(),
     NgxCurrencyModule,
     StoreModule.forFeature('user', userReducer),
-    StoreModule.forFeature('message', messageReducer)
+    StoreModule.forFeature('message', messageReducer),
   ],
   exports: [
     AsideComponent,
@@ -104,7 +102,7 @@ export const options: null | Partial<IConfig> | (() => Partial<IConfig>) = null;
     SelectOptionsPipe,
     ToastComponent,
     DropdownComponent,
-    ConfirmModalComponent
+    ConfirmModalComponent,
   ],
 })
 export class SharedModule {}
