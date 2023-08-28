@@ -36,6 +36,7 @@ import { ToastComponent } from './components/toast/toast.component';
 import { messageReducer } from './stores/reducers/message.reducers';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { ConfirmModalComponent } from './components/modals/confirm-modal/confirm-modal.component';
+import { InterceptorModule } from './interceptors/interceptors.module';
 
 export const options: null | Partial<IConfig> | (() => Partial<IConfig>) = null;
 
@@ -76,6 +77,7 @@ export const options: null | Partial<IConfig> | (() => Partial<IConfig>) = null;
     ReactiveFormsModule,
     NgxMaskModule.forRoot(),
     NgxCurrencyModule,
+    InterceptorModule,
     StoreModule.forFeature('user', userReducer),
     StoreModule.forFeature('message', messageReducer),
   ],

@@ -10,7 +10,6 @@ import { ModalUpdateComponent } from './components/modal-update/modal-update.com
 import { ModalDeleteComponent } from './components/modal-delete/modal-delete.component';
 import { ProductService } from './services/product/product.service';
 import { ProductsRoutingModule } from './products-routing.module';
-import { ERROR_INTERCEPTOR_PROVIDER } from 'src/app/app.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ProductsComponent } from './products.component';
 import { TableItemComponent } from './components/table-item/table-item.component';
@@ -34,6 +33,6 @@ import { TableItemComponent } from './components/table-item/table-item.component
     ReactiveFormsModule,
   ],
   exports: [ProductsComponent],
-  providers: [ProductService, ERROR_INTERCEPTOR_PROVIDER],
+  providers: [ProductService],
 })
 export class ProductsModule {}

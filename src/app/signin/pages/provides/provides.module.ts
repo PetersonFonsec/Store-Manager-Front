@@ -11,7 +11,6 @@ import { ModalCreateComponent } from './components/modal-create/modal-create.com
 import { ModalUpdateComponent } from './components/modal-update/modal-update.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
-import { ERROR_INTERCEPTOR_PROVIDER } from 'src/app/app.module';
 import { ModalDeleteComponent } from './components/modal-delete/modal-delete.component';
 
 @NgModule({
@@ -30,6 +29,6 @@ import { ModalDeleteComponent } from './components/modal-delete/modal-delete.com
     ReactiveFormsModule,
     MatDialogModule,
   ],
-  providers: [ProviderService, ERROR_INTERCEPTOR_PROVIDER],
+  providers: [ProviderService],
 })
 export class ProvidesModule {}
