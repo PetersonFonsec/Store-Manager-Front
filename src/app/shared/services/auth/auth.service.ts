@@ -1,10 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { map, Observable, tap } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { IAuthResponse, ILoginParam, ISignupParam } from './auth.model';
-import {Store} from "@ngrx/store";
+import {
+  IAuthResponse,
+  ILoginParam,
+  IRecovertPasswordRequest,
+  ISignupParam,
+} from './auth.model';
+import { Store } from '@ngrx/store';
 import { enterApplication } from '../../stores/actions/user.actions';
 
 @Injectable({
@@ -32,14 +37,30 @@ export class AuthService {
     return response;
   }
 
-  private setUser({user}: IAuthResponse): void {
+  private setUser({ user }: IAuthResponse): void {
     this.store.dispatch(enterApplication(user));
   }
 
   private setEnviroment(response: IAuthResponse) {
-    this.setUser(response)
-    this.setToken(response)
-    return response
+    this.setUser(response);
+    this.setToken(response);
+    return response;
+  }
+
+  forget(email: string): Observable<boolean> {
+    return this.httpClient.post<boolean>(`${this.urlApi}/forget`, {
+      email,
+    });
+  }
+
+  recovertPassword(
+    token: string,
+    payload: IRecovertPasswordRequest,
+  ): Observable<boolean> {
+    return this.httpClient.post<boolean>(
+      `${this.urlApi}/recovertPassword/${token}`,
+      payload,
+    );
   }
 
   login(user: ILoginParam): Observable<IAuthResponse> {
@@ -58,9 +79,5 @@ export class AuthService {
     localStorage.removeItem(environment.token);
     localStorage.removeItem(environment.user);
     await this.router.navigateByUrl('/signup');
-  }
-
-  refresh(): Observable<any> {
-    return this.httpClient.get(`${this.urlApi}/refresh`);
   }
 }

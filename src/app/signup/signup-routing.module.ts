@@ -26,7 +26,17 @@ const routes: Routes = [
         },
         loadChildren: () =>
           import('./pages/register/register.module').then(
-            (m) => m.RegisterModule
+            (m) => m.RegisterModule,
+          ),
+      },
+      {
+        path: 'forget',
+        data: {
+          title: 'forget',
+        },
+        loadChildren: () =>
+          import('./pages/forget-password/forget-password.module').then(
+            (m) => m.ForgetPasswordModule,
           ),
       },
     ],

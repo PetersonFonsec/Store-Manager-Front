@@ -1,0 +1,33 @@
+<div class="container_header">
+  <h1>Esqueceu a sua senha ?</h1>
+  <p>
+    Informe o seu email que enviaremos um link onde você pode cadastrar uma nova
+    senha.
+  </p>
+</div>
+
+<form autocomplete="off" novalidate="false" (submit)="submit()" #form="ngForm">
+  <div class="input">
+    <app-input-text
+      name="email"
+      [(ngModel)]="user.email"
+      [error]="!!email.invalid && !!email.touched"
+      #email="ngModel"
+      type="email"
+      label="Email"
+      placeholder="Email address"
+      id="email"
+      email
+      required
+    ></app-input-text>
+    <app-error-message [model]="email"> </app-error-message>
+  </div>
+
+  <app-button [loading]="loading" [disabled]="!!form.invalid" type="submit">
+    Mandar email
+  </app-button>
+</form>
+
+<app-alert *ngIf="errorMessage">
+  {{ errorMessage }}
+</app-alert>
