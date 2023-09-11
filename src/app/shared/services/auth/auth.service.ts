@@ -53,12 +53,9 @@ export class AuthService {
     });
   }
 
-  recovertPassword(
-    token: string,
-    payload: IRecovertPasswordRequest,
-  ): Observable<boolean> {
+  recovertPassword(payload: IRecovertPasswordRequest): Observable<boolean> {
     return this.httpClient.post<boolean>(
-      `${this.urlApi}/recovertPassword/${token}`,
+      `${this.urlApi}/recovertPassword`,
       payload,
     );
   }

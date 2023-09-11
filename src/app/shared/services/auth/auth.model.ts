@@ -14,6 +14,7 @@ export interface ILoginParam {
 export interface IRecovertPasswordRequest {
   password: string;
   confirm_password: string;
+  token: string;
 }
 
 export interface ISignupParam {

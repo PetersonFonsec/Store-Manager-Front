@@ -39,21 +39,20 @@ export class FormNewPasswordComponent implements OnInit, OnDestroy {
   submit(): void {
     this.errorMessage = '';
     this.loading = true;
+    this.user.token = this.token;
 
-    this.subscription = this.authService
-      .recovertPassword(this.token, this.user)
-      .subscribe({
-        next: () => {
-          this.loading = false;
-          this.openSuccessModal(
-            'Em breve você recebera um email com os próximos passos.',
-          );
-        },
-        error: ({ error }: HttpErrorResponse) => {
-          this.errorMessage = error.message;
-          this.loading = false;
-        },
-      });
+    this.subscription = this.authService.recovertPassword(this.user).subscribe({
+      next: () => {
+        this.loading = false;
+        this.openSuccessModal(
+          'Em breve você recebera um email com os próximos passos.',
+        );
+      },
+      error: ({ error }: HttpErrorResponse) => {
+        this.errorMessage = error.message;
+        this.loading = false;
+      },
+    });
   }
 
   openSuccessModal(data: string) {
