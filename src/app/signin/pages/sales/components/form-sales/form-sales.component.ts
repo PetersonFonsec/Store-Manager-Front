@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { ISalleCreate } from '../../interfaces/sales';
 import { Observable } from 'rxjs';
@@ -16,9 +16,9 @@ export class FormSalesComponent implements OnInit {
   @Input() loading = false;
   iconClose = faTimes;
   products$: Observable<IProduct[]>;
-  form!: FormGroup;
+  form!: UntypedFormGroup;
 
-  constructor(private formBuilder: FormBuilder, private productService: ProductService) {
+  constructor(private formBuilder: UntypedFormBuilder, private productService: ProductService) {
     this.products$ = this.productService.getAll();
   }
 

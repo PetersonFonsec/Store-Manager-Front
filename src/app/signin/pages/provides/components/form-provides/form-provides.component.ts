@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { InputPhotoValue } from 'src/app/shared/components/inputs/input-photo/input-photo.component';
 import { IProvider } from '../../interfaces/provider';
@@ -22,9 +22,9 @@ export class FormProvidesComponent implements OnInit {
   @Input() provider: IProvider | null = null;
   @Input() loading = false;
   closeIcon = faTimes;
-  form!: FormGroup;
+  form!: UntypedFormGroup;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: UntypedFormBuilder) {}
 
   ngOnInit(): void {
     this.createForm();

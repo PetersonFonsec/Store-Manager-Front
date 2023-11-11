@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { take } from 'rxjs';
 import { InputPhotoValue } from 'src/app/shared/components/inputs/input-photo/input-photo.component';
@@ -14,10 +14,10 @@ export class FormProfileComponent implements OnInit {
   @Output() submit = new EventEmitter<UserState & {photo: InputPhotoValue}>();
   @Input() loading = false;
   user!: UserState;
-  form!: FormGroup;
+  form!: UntypedFormGroup;
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private store: Store<{ user: UserState }>
   ){
     store.select('user')

@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { IProduct, IProductCreate } from '../../interfaces/products';
 
@@ -13,9 +13,9 @@ export class FormProductComponent implements OnInit {
   @Input() product: IProduct | null = null;
   @Input() loading = false;
   iconClose = faTimes;
-  form!: FormGroup;
+  form!: UntypedFormGroup;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: UntypedFormBuilder) {}
 
   ngOnInit(): void {
     this.createForm();

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { take } from 'rxjs';
 import { UserState } from 'src/app/shared/stores/reducers/user.reducers';
@@ -18,11 +18,11 @@ export interface IFormPasswordFields extends UserState {
 export class FormPasswordComponent implements OnInit {
   @Output() submit = new EventEmitter<IFormPasswordFields>();
   @Input() loading = false;
-  form!: FormGroup;
+  form!: UntypedFormGroup;
   user!: UserState;
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private store: Store<{ user: UserState }>
   ){
     store.select('user')

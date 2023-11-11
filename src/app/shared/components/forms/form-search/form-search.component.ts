@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form-search',
@@ -10,9 +10,9 @@ export class FormSearchComponent implements OnInit {
   @Output() search = new EventEmitter<string>();
   @Output() createItem = new EventEmitter<void>();
   @Input() placeholder = '';
-  form!: FormGroup;
+  form!: UntypedFormGroup;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: UntypedFormBuilder) {}
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
