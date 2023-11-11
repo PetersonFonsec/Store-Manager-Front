@@ -9,6 +9,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
+        pathMatch: 'full',
         redirectTo: 'dashboard',
       },
       {
@@ -52,9 +53,7 @@ const routes: Routes = [
       {
         path: 'usuario',
         loadChildren: () =>
-          import('./pages/user/user.module').then(
-            (m) => m.UserModule,
-          ),
+          import('./pages/user/user.module').then((m) => m.UserModule),
         data: {
           title: 'Perfil do Usuario',
         },
