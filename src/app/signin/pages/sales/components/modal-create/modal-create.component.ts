@@ -1,5 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
-import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { Subscription } from 'rxjs';
 import { ISalleCreate } from '../../interfaces/sales';
 import { SalleService } from '../../services/salle/salle.service';

@@ -8,7 +8,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SucessComponent } from './components/sucess/sucess.component';
-import { MatLegacyDialogModule as MatDialogModule } from '@angular/material/legacy-dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { FormNewPasswordComponent } from './components/form-new-password/form-new-password.component';
 
 @NgModule({

@@ -10,7 +10,7 @@ import { ModalUpdateComponent } from './components/modal-update/modal-update.com
 import { SalleService } from './services/salle/salle.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { MatLegacyDialogModule as MatDialogModule } from '@angular/material/legacy-dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { ModalDeleteComponent } from './components/modal-delete/modal-delete.component';
 
 @NgModule({

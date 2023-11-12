@@ -10,7 +10,7 @@ import { FormProvidesComponent } from './components/form-provides/form-provides.
 import { ModalCreateComponent } from './components/modal-create/modal-create.component';
 import { ModalUpdateComponent } from './components/modal-update/modal-update.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatLegacyDialogModule as MatDialogModule } from '@angular/material/legacy-dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { ModalDeleteComponent } from './components/modal-delete/modal-delete.component';
 
 @NgModule({

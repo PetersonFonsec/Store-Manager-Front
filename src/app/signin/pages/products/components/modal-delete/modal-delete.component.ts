@@ -1,5 +1,5 @@
 import { Component, OnDestroy, Inject } from '@angular/core';
-import { MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA, MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
+import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { ProductService } from '../../services/product/product.service';
 import { IProduct } from '../../interfaces/products';
