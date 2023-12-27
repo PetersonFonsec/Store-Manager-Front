@@ -8,10 +8,10 @@
 //  you can delete this line and instead use:
 //    `@include mat.legacy-typography-hierarchy(mat.define-typography-config());`
 /* TODO(mdc-migration): Remove all-legacy-component-typographies once all legacy components are migrated*/
-@include mat.all-legacy-component-typographies();
+// @include mat.all-legacy-component-typographies();
 @include mat.all-component-typographies();
 /* TODO(mdc-migration): Remove legacy-core once all legacy components are migrated*/
-@include mat.legacy-core();
+// @include mat.legacy-core();
 @include mat.core();
 
 $front-primary: mat.define-palette(mat.$indigo-palette);
@@ -29,7 +29,7 @@ $front-theme: mat.define-light-theme(
 );
 
 /* TODO(mdc-migration): Remove all-legacy-component-themes once all legacy components are migrated*/
-@include mat.all-legacy-component-themes($front-theme);
+// @include mat.all-legacy-component-themes($front-theme);
 
 @include mat.all-component-themes($front-theme);
 
@@ -41,8 +41,8 @@ $front-theme: mat.define-light-theme(
   --primary: #3751ff;
   --light: #fcfdfe;
   --white: #fff;
-  --success: #38A169;
-  --error: #E53E3E;
+  --success: #38a169;
+  --error: #e53e3e;
   --green: #29cc97;
   --red: #f12b2c;
   --info: #3182ce;
@@ -104,7 +104,7 @@ table {
   tr:nth-child(even) {
     background-color: var(--light);
     background-color: rgba(55, 81, 255, 0.06);
-}
+  }
 }
 
 ul,
@@ -153,7 +153,6 @@ th {
   padding: 0 32px 12px;
 }
 
-
 tbody tr:hover {
   background-color: rgba(55, 81, 255, 0.06);
 }
@@ -199,7 +198,6 @@ tr {
   width: 100%;
   padding: 8px;
 }
-
 
 app-user {
   height: 100%;

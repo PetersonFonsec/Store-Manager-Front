@@ -4,10 +4,11 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { IConfig, NgxMaskModule } from 'ngx-mask';
 import { NgxCurrencyModule } from 'ngx-currency';
 import { StoreModule } from '@ngrx/store';
+
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AsideComponent } from './components/aside/aside.component';
 import { ButtonComponent } from './components/button/button.component';
@@ -76,7 +77,6 @@ export const options: null | Partial<IConfig> | (() => Partial<IConfig>) = null;
     FormsModule,
     ReactiveFormsModule,
     NgxMaskModule.forRoot(),
-    NgxCurrencyModule,
     InterceptorModule,
     StoreModule.forFeature('user', userReducer),
     StoreModule.forFeature('message', messageReducer),

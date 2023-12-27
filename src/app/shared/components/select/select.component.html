@@ -5,23 +5,24 @@
       (blur)="showOptions = false"
       label="Produto"
       placeholder="Nome do produto"
-      [(ngModel)]="inputValue">
+      [(ngModel)]="inputValue"
+    >
     </app-input-text>
   </div>
 
-
   <ng-container *ngIf="options; else empty">
-    <div class="select_options"  [ngClass]="{'show': showOptions }">
+    <div class="select_options" [ngClass]="{ show: showOptions }">
       <div
-        *ngFor="let option of options | selectOptionsFilter: inputValue"
+        *ngFor="let option of options"
         (click)="setValue(option)"
-        class="select_options_item">
-        {{option.label}}
+        class="select_options_item"
+      >
+        {{ option.label }}
       </div>
     </div>
   </ng-container>
 
   <ng-template #empty>
-    <div class="select_options_empty"> no results </div>
+    <div class="select_options_empty">no results</div>
   </ng-template>
 </div>

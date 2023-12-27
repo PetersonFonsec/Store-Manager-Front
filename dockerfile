@@ -6,4 +6,4 @@ COPY . .
 
 EXPOSE 4200
 
-CMD npm install && npm run start
+CMD npm install --legacy-peer-deps && npm run start
